@@ -20,14 +20,14 @@ plugins {
  * Project information
  */
 group = "org.danilopianini"
-description = "A template repository for kickstarting Gradle Plugins"
+description = "Project evaluation tools for OOP projects @ UniBo"
 inner class ProjectInfo {
-    val longName = "Template for Gradle Plugins"
+    val longName = "Unibo OOP Projects Evaluation Tools"
     val website = "https://github.com/DanySK/$name"
     val vcsUrl = "$website.git"
     val scm = "scm:git:$website.git"
-    val pluginImplementationClass = "$group.template.HelloGradle"
-    val tags = listOf("template", "kickstart", "example")
+    val pluginImplementationClass = "it.unibo.projecteval.OOPProjectEvalPlugin"
+    val tags = listOf("unibo", "university", "oop", "evaluation")
 }
 val info = ProjectInfo()
 
@@ -37,9 +37,11 @@ gitSemVer {
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 multiJvm {
+    jvmVersionForCompilation.set(17)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
 }
 
@@ -47,8 +49,10 @@ dependencies {
     api(gradleApi())
     api(gradleKotlinDsl())
     api(kotlin("stdlib-jdk8"))
-    testImplementation(libs.testkit)
+    api(libs.java.qa)
+    api(libs.kotlin.gradle.plugin.api)
     testImplementation(libs.bundles.kotlin.testing)
+    testImplementation(libs.turtle)
 }
 
 // Enforce Kotlin version coherence

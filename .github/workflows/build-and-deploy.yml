@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: [ windows-2022, macos-12, ubuntu-22.04 ]
     runs-on: ${{ matrix.os }}
@@ -38,6 +39,8 @@ jobs:
           signing-key: ${{ secrets.SIGNING_KEY }}
           signing-password: ${{ secrets.SIGNING_PASSWORD }}
   release:
+    permissions:
+      contents: write
     concurrency:
       # Only one release job at a time. Strictly sequential.
       group: release
