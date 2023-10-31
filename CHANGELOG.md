@@ -1,3 +1,38 @@
+## 1.0.0 (2023-10-31)
+
+
+### Features
+
+* working production of a blame.md report ([faa4b72](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/faa4b72838cc590b57027612e9605db942beef59))
+
+
+### Dependency updates
+
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.22.1 ([7adff93](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7adff9383414c3cb73e1291a4627533a41644ee4))
+
+
+### Bug Fixes
+
+* **release:** update the Github packages release task names ([02d9834](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/02d9834b9433eb1d9d033dafd26cc9443b34c591))
+
+
+### Build and continuous integration
+
+* remove obsolete editorconfig rule ([87fbe96](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/87fbe965d7dc2ec592fbb3f609b1416444b2d324))
+* update publish-on-central to correctly sort signing and publication tasks when publishing on GitHub ([be7be72](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/be7be72c12cb31030f79ccc607874628ec2f2f17))
+
+
+### General maintenance
+
+* initial (non working) port of the infrastructure ([fe84e6f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/fe84e6fd5051055fce73de53ac36f5874e30d39a))
+
+
+### Style improvements
+
+* avoid shadowing the implicit lambda parameter `it` ([be1e2c9](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/be1e2c97530b79da1410f5421988f7da51ad236b))
+* update the QA infrastructure and fix the related style errors ([72b5b11](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/72b5b116a2f65b95aa6f750af5689747099813f6))
+* Use `checkNotNull()` instead of `check()` for checking not-null ([a77a31c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a77a31c26e0c30dd897a07cd4f9997a255bda10b))
+
 ## [1.0.44](https://github.com/DanySK/Template-for-Gradle-Plugins/compare/1.0.43...1.0.44) (2023-10-16)
 
 
