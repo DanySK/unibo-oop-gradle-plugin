@@ -2,11 +2,14 @@ package org.danilopianini.gradle.test
 
 import com.lordcodes.turtle.shellRun
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.file.shouldExist
+import io.kotest.matchers.file.shouldNotBeEmpty
 import io.kotest.matchers.paths.shouldContainFile
 import io.kotest.matchers.shouldBe
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
 import java.io.File
+import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
 
@@ -17,7 +20,7 @@ class Tests : StringSpec({
 
     listOf("OOP22-Giamperoli-Sonofapo-jtrs").forEach { repository ->
         "test $repository" {
-            val destination = createTempDirectory(repository)
+            val destination: Path = createTempDirectory(repository)
             shellRun(
                 "git",
                 listOf("clone", "https://github.com/$organization/$repository.git", destination.absolutePathString()),
@@ -32,19 +35,20 @@ class Tests : StringSpec({
             val newContent = buildFileContent.replaceRange(
                 pluginsMatch.range.last..pluginsMatch.range.last,
                 "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
-            )//.replace("id(\"org.danilopianini.gradle-java-qa\") version \"1.9.0\"", "")
+            )
             buildFile.writeText(newContent)
-            val asd = Thread.currentThread()
-                .contextClassLoader
-                .getResource("org/danilopianini/javaqa/versions.properties")!!
-            println(asd.path)
+            val destinationFile = destination.toFile()
             val result = with(GradleRunner.create()) {
-                withProjectDir(destination.toFile())
+                withProjectDir(destinationFile)
                 withArguments("blame", "--stacktrace")
                 withPluginClasspath()
                 build()
             }
-            requireNotNull(result.tasks.find { it.path == ":blame" }) shouldBe TaskOutcome.SUCCESS
+            requireNotNull(result.tasks.find { it.path == ":blame" }).outcome shouldBe TaskOutcome.SUCCESS
+            val blame = File(destinationFile, "build/blame.md")
+            blame.shouldExist()
+            blame.shouldNotBeEmpty()
+            destinationFile.deleteRecursively()
         }
     }
 })

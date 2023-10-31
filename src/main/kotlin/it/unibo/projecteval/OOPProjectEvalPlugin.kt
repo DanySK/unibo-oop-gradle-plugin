@@ -9,13 +9,17 @@ import org.gradle.api.DomainObjectCollection
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.file.FileTree
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.plugins.quality.Checkstyle
+import org.gradle.api.plugins.quality.CheckstyleExtension
 import org.gradle.api.plugins.quality.PmdExtension
 import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.get
+import org.gradle.kotlin.dsl.registering
 import org.gradle.kotlin.dsl.withType
 import java.io.File
 import kotlin.reflect.KClass
@@ -61,7 +65,11 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
             }
             configureExtension<PmdExtension> { isIgnoreFailures = true }
             configureExtension<CpdExtension> { isIgnoreFailures = true }
-            configureExtension<Checkstyle> { isIgnoreFailures = true }
+            configureExtension<CheckstyleExtension> { isIgnoreFailures = true }
+            val removeWarnings = tasks.register("removeWarnings", RemoveWarnings::class.java)
+            tasks.withType<JavaCompile>().configureEach {
+                it.dependsOn(removeWarnings)
+            }
             tasks.withType<Cpd> {
                 reports {
                     it.xml.required.set(true)
@@ -71,7 +79,7 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                 minimumTokenCount = 50
                 ignoreFailures = true
                 configureExtension<JavaPluginExtension> {
-                    source = sourceSets["main"].allJava
+                    source = sourceSets["main"].allJava + sourceSets["test"].allJava
                 }
             }
             registerTask<Task>("blame") {
@@ -80,6 +88,7 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                     tasks.withType<SpotBugsTask>() +
                     tasks.withType<Cpd>()
                 dependsOn(dependencies)
+                dependencies.forEach { it.dependsOn(removeWarnings) }
                 val identifier = if (project == rootProject) "" else "-${project.name}"
                 val output = project.layout.buildDirectory.file("blame$identifier.md")
                 outputs.file(output)
