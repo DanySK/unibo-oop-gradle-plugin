@@ -31,7 +31,7 @@ class Tests : StringSpec({
             val buildFile = File(destination.toFile(), buildFileName)
             val buildFileContent = buildFile.readText()
             val pluginsMatch = pluginsBlock.find(buildFileContent)
-            check(pluginsMatch != null)
+            checkNotNull(pluginsMatch)
             val newContent = buildFileContent.replaceRange(
                 pluginsMatch.range.last..pluginsMatch.range.last,
                 "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
