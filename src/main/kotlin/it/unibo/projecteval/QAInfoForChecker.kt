@@ -3,6 +3,9 @@ package it.unibo.projecteval
 import it.unibo.projecteval.Extensions.blameFor
 import java.io.File
 
+/**
+ * Scans textual reports of issue from static analyzers and attributes them to the committer.
+ */
 data class QAInfoForChecker(
     override val checker: String,
     override val file: String,

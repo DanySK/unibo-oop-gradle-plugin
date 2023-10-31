@@ -36,8 +36,8 @@ gitSemVer {
 }
 
 repositories {
-    mavenCentral()
     gradlePluginPortal()
+    mavenCentral()
 }
 
 multiJvm {

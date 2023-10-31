@@ -1,7 +1,9 @@
 package it.unibo.projecteval
 
+import org.jetbrains.kotlin.konan.file.File
 import org.w3c.dom.NamedNodeMap
 import org.w3c.dom.Node
+import org.w3c.dom.NodeList
 import java.util.concurrent.TimeUnit
 
 internal object Extensions {
@@ -11,7 +13,7 @@ internal object Extensions {
     fun NamedNodeMap.iterator() = object : Iterator<Node> {
         var index = 0
         override fun hasNext() = index < length
-        override fun next() = item(index++)
+        override fun next() = if (hasNext()) item(index++) else throw NoSuchElementException()
     }
 
     operator fun Node.get(attribute: String, orElse: String): String = get(attribute) { orElse }
@@ -25,11 +27,11 @@ internal object Extensions {
         }
     ): String = attributes?.getNamedItem(attribute)?.textContent ?: onFailure()
 
-    fun org.w3c.dom.NodeList.toIterable() = Iterable {
-        object : Iterator<org.w3c.dom.Node> {
+    fun NodeList.toIterable() = Iterable {
+        object : Iterator<Node> {
             var index = 0
             override fun hasNext(): Boolean = index < length - 1
-            override fun next(): org.w3c.dom.Node = item(index++)
+            override fun next(): Node = if (hasNext()) item(index++) else throw NoSuchElementException()
         }
     }
 
@@ -40,21 +42,25 @@ internal object Extensions {
 
     fun List<String>.commandOutput(): String = ProcessBuilder(this)
         .redirectOutput(ProcessBuilder.Redirect.PIPE)
+        .redirectError(ProcessBuilder.Redirect.PIPE)
         .start()
         .apply { waitFor(1, TimeUnit.MINUTES) }
         .inputStream
         .bufferedReader()
         .readText()
 
-    fun String.blameFor(lines: IntRange): Set<String> =
-        listOf("git", "blame", "-L", "${lines.first},${lines.last}", "-p", this)
-            .commandOutput()
+    fun String.blameFor(lines: IntRange): Set<String> {
+        val directory = this.substringBeforeLast(File.separator)
+        val command = listOf("git", "-C", directory, "blame", "-L", "${lines.first},${lines.last}", "-p", this)
+        val output = command.commandOutput()
+        return output
             .lines()
             .flatMap { line -> authorMatch.matchEntire(line)?.destructured?.toList().orEmpty() }
             .toSet()
             .also {
                 check(it.isNotEmpty()) {
-                    "Unable to assign anything with: 'git blame -L ${lines.first},${lines.last} -p $this'"
+                    "Unable to assign anything with: '${command.joinToString(separator = " ")}':\n$output"
                 }
             }
+    }
 }

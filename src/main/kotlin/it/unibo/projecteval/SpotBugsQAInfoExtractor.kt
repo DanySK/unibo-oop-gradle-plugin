@@ -3,9 +3,13 @@ package it.unibo.projecteval
 import it.unibo.projecteval.Extensions.childrenNamed
 import it.unibo.projecteval.Extensions.get
 import it.unibo.projecteval.Extensions.toIterable
+import org.w3c.dom.Element
 import java.io.File
 
-class SpotBugsQAInfoExtractor(root: org.w3c.dom.Element) : QAInfoContainer by (
+/**
+ * Extracts QA information from SpotBugs reports.
+ */
+class SpotBugsQAInfoExtractor(root: Element) : QAInfoContainer by (
     root.childNodes.let { childNodes ->
         val sourceDirs = childNodes.toIterable()
             .filter { it.nodeName == "Project" }

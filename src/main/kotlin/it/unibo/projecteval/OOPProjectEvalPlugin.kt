@@ -12,8 +12,10 @@ import org.gradle.api.Task
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.plugins.quality.Checkstyle
+import org.gradle.api.plugins.quality.CheckstyleExtension
 import org.gradle.api.plugins.quality.PmdExtension
 import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.withType
@@ -43,6 +45,9 @@ private inline fun <reified T : Task> Project.registerTask(
     crossinline action: T.() -> Unit
 ): TaskProvider<T> = tasks.register(name, T::class.java) { it.action() }
 
+/**
+ * Plugin for the OOP Project Evaluation.
+ */
 open class OOPProjectEvalPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
@@ -61,17 +66,21 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
             }
             configureExtension<PmdExtension> { isIgnoreFailures = true }
             configureExtension<CpdExtension> { isIgnoreFailures = true }
-            configureExtension<Checkstyle> { isIgnoreFailures = true }
+            configureExtension<CheckstyleExtension> { isIgnoreFailures = true }
+            val removeSuppressions = tasks.register("removeSuppressions", RemoveSuppressions::class.java)
+            tasks.withType<JavaCompile>().configureEach {
+                it.dependsOn(removeSuppressions)
+            }
             tasks.withType<Cpd> {
                 reports {
                     it.xml.required.set(true)
                     it.text.required.set(true)
                 }
                 language = "java"
-                minimumTokenCount = 50
+                minimumTokenCount = cpdTokens
                 ignoreFailures = true
                 configureExtension<JavaPluginExtension> {
-                    source = sourceSets["main"].allJava
+                    source = sourceSets["main"].allJava + sourceSets["test"].allJava
                 }
             }
             registerTask<Task>("blame") {
@@ -80,6 +89,7 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                     tasks.withType<SpotBugsTask>() +
                     tasks.withType<Cpd>()
                 dependsOn(dependencies)
+                dependencies.forEach { it.dependsOn(removeSuppressions) }
                 val identifier = if (project == rootProject) "" else "-${project.name}"
                 val output = project.layout.buildDirectory.file("blame$identifier.md")
                 outputs.file(output)
@@ -90,6 +100,7 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                         .flatMap { task ->
                             task.outputs.files.asIterable().filter { it.exists() && it.extension == "xml" }
                         }
+                        .filter { it.exists() && it.length() > 0 }
                         .flatMap<File, QAInfo> {
                             val root: org.w3c.dom.Element = xmlParser.parse(it).documentElement
                             when (root.tagName) {
@@ -128,5 +139,9 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                 }
             }
         }
+    }
+
+    companion object {
+        private const val cpdTokens = 50
     }
 }

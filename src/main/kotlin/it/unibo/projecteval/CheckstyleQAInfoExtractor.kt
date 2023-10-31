@@ -4,6 +4,9 @@ import it.unibo.projecteval.Extensions.get
 import it.unibo.projecteval.Extensions.childrenNamed
 import it.unibo.projecteval.Extensions.toIterable
 
+/**
+ * Extracts QA information from Checkstyle reports.
+ */
 class CheckstyleQAInfoExtractor(root: org.w3c.dom.Element) : QAInfoContainer by (
     root.childNodes.toIterable()
         .asSequence()
