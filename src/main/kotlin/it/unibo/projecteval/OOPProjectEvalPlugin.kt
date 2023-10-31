@@ -93,7 +93,7 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                 val identifier = if (project == rootProject) "" else "-${project.name}"
                 val output = project.layout.buildDirectory.file("blame$identifier.md")
                 outputs.file(output)
-                doLast {
+                doLast { _ ->
                     val factory = javax.xml.parsers.DocumentBuilderFactory.newInstance()
                     val xmlParser = factory.newDocumentBuilder()
                     val errors = dependencies
