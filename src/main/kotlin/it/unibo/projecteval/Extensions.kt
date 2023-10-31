@@ -22,9 +22,9 @@ internal object Extensions {
         attribute: String,
         onFailure: () -> String = {
             throw IllegalArgumentException(
-                "No attribute '$attribute' in $this. Available ones: ${attributes.iterator().asSequence().toList()}"
+                "No attribute '$attribute' in $this. Available ones: ${attributes.iterator().asSequence().toList()}",
             )
-        }
+        },
     ): String = attributes?.getNamedItem(attribute)?.textContent ?: onFailure()
 
     fun NodeList.toIterable() = Iterable {

@@ -32,7 +32,7 @@ class CpdQAInfoExtractor(root: Element) : QAInfoContainer by (
                 files.first()["path"],
                 ranges.first(),
                 description,
-                blamed
+                blamed,
             )
         }
         .asIterable()

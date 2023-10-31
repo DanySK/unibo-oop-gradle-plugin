@@ -31,7 +31,7 @@ private val suffixMatches = Regex("extension|plugin")
 
 private inline fun <reified T> Project.configureExtension(
     name: String = T::class.simpleName().lowercase().replace(suffixMatches, ""),
-    crossinline action: T.() -> Unit
+    crossinline action: T.() -> Unit,
 ) =
     extensions.getByName(name).let {
         when (it) {
@@ -42,7 +42,7 @@ private inline fun <reified T> Project.configureExtension(
 
 private inline fun <reified T : Task> Project.registerTask(
     name: String,
-    crossinline action: T.() -> Unit
+    crossinline action: T.() -> Unit,
 ): TaskProvider<T> = tasks.register(name, T::class.java) { it.action() }
 
 /**
@@ -125,10 +125,10 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                             """
                             |## $checker: ${violations.size} mistakes
                             ${
-                            violations.sortedBy { it.details }.joinToString("") {
-                                val fileName = File(it.file).name
-                                "|* ${it.details.endingWith(".")} In: $fileName@[${it.lines}]\n"
-                            }.trimEnd()
+                                violations.sortedBy { it.details }.joinToString("") {
+                                    val fileName = File(it.file).name
+                                    "|* ${it.details.endingWith(".")} In: $fileName@[${it.lines}]\n"
+                                }.trimEnd()
                             }
                             """
                         }.joinToString(separator = "", prefix = "", postfix = "")}
