@@ -1,3 +1,18 @@
+## [1.0.2](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.1...1.0.2) (2023-11-01)
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.70 ([6b8a30e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6b8a30e0fd99767f9aa31589147a3a67947c2004))
+* **deps:** update plugin kotlin-qa to v0.54.0 ([98cbd6a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/98cbd6aebbd0b3ac916d662b5a4dbb68fc7c9137))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.14 ([a471ce4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a471ce447d22a527593eea266d5077c939078760))
+* **deps:** update plugin publishoncentral to v5.0.17 ([d844537](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d84453772b7b6a50d5dfb61a11e5eb4ca409a93e))
+
+
+### Bug Fixes
+
+* **ci:** add packages permissions ([278a66f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/278a66f59284e44fca7c1c5d5a9034c1590f9a12))
+
 ## [1.0.1](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.0...1.0.1) (2023-10-31)
 
 
