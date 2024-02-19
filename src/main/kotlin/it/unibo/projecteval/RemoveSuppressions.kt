@@ -45,6 +45,6 @@ open class RemoveSuppressions : DefaultTask() {
             "@SuppressF?B?Warnings(\\s*\\(.*?\\)\\s*)?",
             "//\\s+NOPMD.*\$",
             "//\\s+CHECKSTYLE.*\$",
-        ).map { it.toRegex() }
+        ).map { it.toRegex(RegexOption.DOT_MATCHES_ALL) }
     }
 }
