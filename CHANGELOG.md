@@ -1,3 +1,15 @@
+## [1.0.5](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.4...1.0.5) (2024-02-19)
+
+
+### Bug Fixes
+
+* match newlines with FB suppressions ([c451bb9](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c451bb9611fbef17113dc9bf42075ad20a06d9d7))
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.2 ([8b500a2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8b500a24202832598736648f5992e7565e5d5623))
+
 ## [1.0.4](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.3...1.0.4) (2024-02-19)
 
 
