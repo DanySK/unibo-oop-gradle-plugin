@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.3...1.0.4) (2024-02-19)
+
+
+### Bug Fixes
+
+* do not crash on missing file reference of spotbugs ([d2a3b5e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d2a3b5ec5ad3c1a4a0c26a5b59072c627c261d18))
+* make suppression regex match newlines ([a3de00b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a3de00bda1ee64ae6ceba772f309988f1fa873b6))
+* match all only on FB suppressions ([66b98a4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/66b98a424a05ae8122415b1d171faf02ec0453c0))
+
 ## [1.0.3](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.2...1.0.3) (2024-02-08)
 
 
