@@ -42,9 +42,9 @@ open class RemoveSuppressions : DefaultTask() {
 
     companion object {
         private val suppressions: List<Regex> = listOf(
-            "@SuppressF?B?Warnings(\\s*\\(.*?\\)\\s*)?",
-            "//\\s+NOPMD.*\$",
-            "//\\s+CHECKSTYLE.*\$",
-        ).map { it.toRegex(RegexOption.DOT_MATCHES_ALL) }
+            Regex("@SuppressF?B?Warnings(\\s*\\(.*?\\)\\s*)?", RegexOption.DOT_MATCHES_ALL),
+            Regex("//\\s+NOPMD.*\$"),
+            Regex("//\\s+CHECKSTYLE.*\$"),
+        )
     }
 }
