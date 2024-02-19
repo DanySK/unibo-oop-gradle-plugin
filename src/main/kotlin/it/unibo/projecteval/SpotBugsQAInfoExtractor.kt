@@ -30,7 +30,8 @@ class SpotBugsQAInfoExtractor(root: Element) : QAInfoContainer by (
                 }
                 val actualFile = sourceDirs.flatMap { File(it).walkTopDown() }
                     .map { it.absolutePath }
-                    .first { candidateFile in it }
+                    .firstOrNull { candidateFile in it }
+                    .orEmpty()
                 actualFile.takeIf { it.isNotBlank() }?.let {
                     QAInfoForChecker(
                         "Potential bugs",

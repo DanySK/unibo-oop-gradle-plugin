@@ -12,13 +12,17 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
+import kotlin.text.RegexOption.MULTILINE
 
 class Tests : StringSpec({
 
     val organization = "unibo-oop-projects"
     val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
 
-    listOf("OOP22-Giamperoli-Sonofapo-jtrs").forEach { repository ->
+    listOf(
+        "OOP22-Giamperoli-Sonofapo-jtrs",
+        "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
+    ).forEach { repository ->
         "test $repository" {
             val destination: Path = createTempDirectory(repository)
             shellRun(
@@ -29,7 +33,12 @@ class Tests : StringSpec({
             destination.shouldContainFile(buildFileName)
             destination.shouldContainFile("settings.gradle.kts")
             val buildFile = File(destination.toFile(), buildFileName)
-            val buildFileContent = buildFile.readText()
+            val buildFileContent = buildFile
+                .readText()
+                .replace(
+                    Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
+                    "",
+                )
             val pluginsMatch = pluginsBlock.find(buildFileContent)
             checkNotNull(pluginsMatch)
             val newContent = buildFileContent.replaceRange(
