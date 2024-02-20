@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.5...1.0.6) (2024-02-20)
+
+
+### Bug Fixes
+
+* match comments at the end of supressions and imports of SuppressFBWarnings ([3735ba5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3735ba59d5623bc2f5f58bd7216d87a247904418))
+
 ## [1.0.5](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.4...1.0.5) (2024-02-19)
 
 
