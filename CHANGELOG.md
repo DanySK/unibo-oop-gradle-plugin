@@ -1,3 +1,16 @@
+## [1.0.7](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.6...1.0.7) (2024-02-27)
+
+
+### Bug Fixes
+
+* add regex option to match endlines on PMD and checkstyle comments ([64cbefe](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/64cbefe2eee97e8d2e22a0772d341293e6264783))
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.3 ([663ecf7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/663ecf7ec9a6235bfd83de5c50c1a751990e11f3))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.4 ([1935e44](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/1935e4419a78d313ae1ae0e48dd871e6fb6776cb))
+
 ## [1.0.6](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.5...1.0.6) (2024-02-20)
 
 
