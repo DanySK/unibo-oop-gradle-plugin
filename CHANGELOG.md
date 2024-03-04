@@ -1,3 +1,18 @@
+## [1.0.8](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.7...1.0.8) (2024-03-04)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.9.20 ([9bb72d9](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9bb72d9def199a241aaf8f984009a4d243472383))
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.37.0 ([ed08e98](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ed08e983ab894ff80f128821abbb4bff3bead2f7))
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.38.0 ([4c23ad2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/4c23ad264e64bc4875a3fd9c26efd3b03c8d7a3d))
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.5 ([f15d5e0](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f15d5e03c82eacabb36b7617d3473d85ebfbd485))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.6 ([d98e854](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d98e8549df74a64e76a99db49e8915dbf3f7b1e5))
+
 ## [1.0.7](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.6...1.0.7) (2024-02-27)
 
 
