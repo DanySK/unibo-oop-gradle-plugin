@@ -10,7 +10,7 @@ jgit = "org.eclipse.jgit:org.eclipse.jgit:6.9.0.202403050737-r"
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 kotlin-gradle-plugin-api = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-turtle = "com.lordcodes.turtle:turtle:0.9.0"
+turtle = "com.lordcodes.turtle:turtle:0.10.0"
 
 [bundles]
 kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm" ]
