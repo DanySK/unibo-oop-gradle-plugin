@@ -1,3 +1,16 @@
+## [1.0.13](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.12...1.0.13) (2024-06-01)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.8 ([a2861a5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a2861a5f9d909450825c1b715818fc8d5e6507e4))
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.51.0 ([b2e5d3a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b2e5d3a558765a0ce9776e60b2d322a2f83a2d60))
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.52.0 ([dc7b73f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/dc7b73f92a5a255ee57b2bbb80cc5af2f89dec5c))
+* **deps:** update node.js to 20.14 ([8f52b16](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8f52b16f507d4975ce4082e3ce826367420e3166))
+* **deps:** update plugin gitsemver to v3.1.6 ([1241938](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/12419389c0e9fc7289b183f033b179eace07d225))
+* **deps:** update plugin gitsemver to v3.1.7 ([c907001](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c907001d9a643f94d82c771552941bef46a1b6d1))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.6 ([5043475](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5043475cbeaf5d075d3014f34668e2e58657bbe7))
+
 ## [1.0.12](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.11...1.0.12) (2024-05-21)
 
 
