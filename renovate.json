@@ -2,5 +2,14 @@
    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
    "extends": [
       "github>DanySK/renovate-config:gradle-plugin"
-   ]
+   ],
+     "packageRules": [
+    {
+      "description": "Trigger a patch update on Java-QA upgrades",
+      "matchPackageNames": [
+        "/^org\\.danilopianini.*java-qa.*/"
+      ],
+      "semanticCommitScope": "core-deps"
+    }
+  ]
 }
