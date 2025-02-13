@@ -24,6 +24,7 @@ class Tests : StringSpec({
         "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
         "OOP23-Azael-Fu-Jiaqi-Jiekai-Sun-Sun-ObjectMon",
         "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
+        "OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast",
     ).forEach { repository ->
         "test $repository" {
             val destination: Path = createTempDirectory(repository)
