@@ -1,3 +1,53 @@
+## [1.1.0](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.13...1.1.0) (2025-02-13)
+
+
+### Features
+
+* apply upgrades to restore the minimal functionality of the project ([e52ae03](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e52ae0306931a7caeb3ff17aeefa4b7811832721))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.64.0 ([bedaa38](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/bedaa389931024603fb19e58a5eaa7e8b29e6880))
+* **deps:** update dependency org.danilopianini:gradle-java-qa to v1.53.0 ([be929ed](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/be929eda5533feaeda466453b74fc3bfea8e288b))
+* **deps:** update dependency org.eclipse.jgit:org.eclipse.jgit to v6.10.0.202406032230-r ([16d1884](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/16d1884ccf7de346c2fc43579b5be48fc3f8d1c7))
+* **deps:** update kotest to v5.9.1 ([d950043](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d95004360dce539ab115783823e2e5e6f46d85ce))
+* **deps:** update plugin com.gradle.enterprise to v3.17.5 ([994f53f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/994f53f6418e234e151e62c64efe4872ddf0b46c))
+* **deps:** update plugin kotlin-qa to v0.62.1 ([9ff75ae](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9ff75ae242e4ea41a3a72fcabcb98306f132171d))
+* **deps:** update plugin kotlin-qa to v0.62.2 ([31d2c75](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/31d2c7518296480c3975fd3365408131b958d3b4))
+* **deps:** update plugin kotlin-qa to v0.62.3 ([a67b900](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a67b900ac1cb47d0adb5c68e5a07bdfb40927a0d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.7 ([c125656](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c125656cfae676991678ce01b3817e28d62a5977))
+* **deps:** update plugin publishoncentral to v5.1.2 ([90c6104](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/90c6104dd9afb2c5a89796628be2463656336bac))
+* **deps:** update plugin publishoncentral to v5.1.3 ([355a333](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/355a3337082e9184544a1e810cf205e713148648))
+* **deps:** update plugin tasktree to v4 ([963cae6](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/963cae6b10ecd28e3eae9fb10c2f5117a5d2a6b6))
+
+
+### Documentation
+
+* write a readme ([6381429](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/638142924760e2cffde40bdf6bad2ebb99f6ee9b))
+
+
+### Tests
+
+* add OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast to the test suite ([723c4fc](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/723c4fcf423c87a56b73c323a4b0b30af6cd2fac))
+
+
+### Build and continuous integration
+
+* add gradle wrapper's distributionSha256Sum ([7dd7b32](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7dd7b328f47a6bdbe28c12eeef35a887aefaae5e))
+* **deps:** update actions/checkout action to v4.1.7 ([ff146be](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ff146be98c54a398a93fd0a906cab7e4e59ee13f))
+* **deps:** update danysk/action-checkout action to v0.2.19 ([a622e2e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a622e2e400e5a9edab4996120221633bd729db1b))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.21 ([833414c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/833414c36d0db260045f704d1b2fb94cbd267cc2))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.22 ([44e9c06](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/44e9c065280e50e72aaede9ba6efd08fb50a14dc))
+* don't retry failed releases ([69d5c55](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/69d5c55513eb52f4f772738d3cebd5134ddfd16a))
+* fix the drop task name ([#196](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/196)) ([a0f3140](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a0f3140eca066d3cfd563f1a886d4f7758845b7b))
+* fix the upload task name ([a39e021](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a39e021fd25d8d3682f2bdf6037b6a57fbdd9924))
+* migrate to develocity ([23f674f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/23f674fe8f501e5e16d14b8f79111b09304a292c))
+* migrate to the `compilerOptions` DSL ([a764058](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a76405882df4a1e02153721af663530904d47de5))
+* move the concurrency at the dispatcher level ([ba5ceb5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ba5ceb5c2fd37069df7c7bdd0e533288e71db34d))
+* remove useless suppression ([5724c23](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5724c23f2a53b7cbbefc462dab2d64cf2e13243d))
+* **renovate:** Trigger a patch update on Java-QA upgrades ([63cadb3](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/63cadb38c010911a8c4e4376363b35c2de76a008))
+
 ## [1.0.13](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.12...1.0.13) (2024-06-01)
 
 
