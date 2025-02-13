@@ -1,6 +1,4 @@
-@file:Suppress("OPT_IN_USAGE")
-
-import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
+@file:Suppress("UnstableApiUsage")
 
 plugins {
     `java-gradle-plugin`
@@ -55,24 +53,10 @@ dependencies {
     testImplementation(libs.turtle)
 }
 
-// Enforce Kotlin version coherence
-configurations.matching { it.name != "detekt" }.all {
-    resolutionStrategy.eachDependency {
-        if (requested.group == "org.jetbrains.kotlin" && requested.name.startsWith("kotlin")) {
-            useVersion(KOTLIN_VERSION)
-            because("All Kotlin modules should use the same version, and compiler uses $KOTLIN_VERSION")
-        }
-    }
-}
-
 kotlin {
-    target {
-        compilations.all {
-            kotlinOptions {
-                allWarningsAsErrors = true
-                freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
-            }
-        }
+    compilerOptions {
+        allWarningsAsErrors = true
+        freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
     }
 }
 
