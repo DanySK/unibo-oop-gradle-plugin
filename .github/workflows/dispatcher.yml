@@ -13,6 +13,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
 jobs:
   dispatcher:
     runs-on: ubuntu-22.04
@@ -25,7 +29,7 @@ jobs:
   ci-cd:
     needs:
       - dispatcher
-    permissions: 
+    permissions:
       contents: write
       packages: write
     uses: ./.github/workflows/build-and-deploy.yml
