@@ -59,6 +59,7 @@ jobs:
           node-version: ${{ steps.node-version.outputs.version }}
       - uses: DanySK/build-check-deploy-gradle-action@2.4.22
         with:
+          retries-on-failure: '1'
           build-command: true
           check-command: true
           deploy-command: |
