@@ -5,7 +5,6 @@ package it.unibo.projecteval
  * The report includes the [file] where the problem was detected, the affected [lines] and the [details] of the issue.
  */
 interface QAInfo {
-
     /**
      * The static analyzer producing the report.
      */

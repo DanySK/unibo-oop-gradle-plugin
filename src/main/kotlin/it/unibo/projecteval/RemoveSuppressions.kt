@@ -11,7 +11,6 @@ import java.io.File
  * This task removes all warning suppressions from the source code.
  */
 open class RemoveSuppressions : DefaultTask() {
-
     /**
      * All java source files.
      */
@@ -30,22 +29,25 @@ open class RemoveSuppressions : DefaultTask() {
      * Removes all suppressions from the source code.
      */
     @TaskAction
-    fun removeAllSuppressions() = allSource.asSequence()
-        .filter { it.extension == "java" }
-        .forEach { file ->
-            var contents = file.readText()
-            for (suppression in suppressions) {
-                contents = contents.replace(suppression, "")
+    fun removeAllSuppressions() =
+        allSource
+            .asSequence()
+            .filter { it.extension == "java" }
+            .forEach { file ->
+                var contents = file.readText()
+                for (suppression in suppressions) {
+                    contents = contents.replace(suppression, "")
+                }
+                file.writeText(contents)
             }
-            file.writeText(contents)
-        }
 
-    companion object {
-        private val suppressions: List<Regex> = listOf(
-            Regex("""@SuppressF?B?Warnings(\(.*?\)\s*(//.*?)?\R)?""", RegexOption.DOT_MATCHES_ALL),
-            Regex("""import(\s|\R)+edu\.umd\.cs\.findbugs\.annotations\.SuppressFBWarnings(\s|\R)*;"""),
-            Regex("//\\s+NOPMD.*\$", RegexOption.MULTILINE),
-            Regex("//\\s+CHECKSTYLE.*\$", RegexOption.MULTILINE),
-        )
+    private companion object {
+        private val suppressions: List<Regex> =
+            listOf(
+                Regex("""@SuppressF?B?Warnings(\(.*?\)\s*(//.*?)?\R)?""", RegexOption.DOT_MATCHES_ALL),
+                Regex("""import(\s|\R)+edu\.umd\.cs\.findbugs\.annotations\.SuppressFBWarnings(\s|\R)*;"""),
+                Regex("//\\s+NOPMD.*\$", RegexOption.MULTILINE),
+                Regex("//\\s+CHECKSTYLE.*\$", RegexOption.MULTILINE),
+            )
     }
 }

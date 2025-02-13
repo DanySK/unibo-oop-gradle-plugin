@@ -20,6 +20,7 @@ plugins {
  */
 group = "org.danilopianini"
 description = "Project evaluation tools for OOP projects @ UniBo"
+
 inner class ProjectInfo {
     val longName = "Unibo OOP Projects Evaluation Tools"
     val website = "https://github.com/DanySK/$name"
@@ -97,7 +98,10 @@ tasks.withType<Test>().configureEach {
         showStandardStreams = true
         showCauses = true
         showStackTraces = true
-        events(*org.gradle.api.tasks.testing.logging.TestLogEvent.values())
+        events(
+            *org.gradle.api.tasks.testing.logging.TestLogEvent
+                .values(),
+        )
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
 }

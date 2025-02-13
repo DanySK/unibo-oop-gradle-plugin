@@ -14,53 +14,61 @@ import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
 import kotlin.text.RegexOption.MULTILINE
 
-class Tests : StringSpec({
+class Tests :
+    StringSpec({
 
-    val organization = "unibo-oop-projects"
-    val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
+        val organization = "unibo-oop-projects"
+        val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
 
-    listOf(
-        "OOP22-Giamperoli-Sonofapo-jtrs",
-        "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
-        "OOP23-Azael-Fu-Jiaqi-Jiekai-Sun-Sun-ObjectMon",
-        "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
-        "OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast",
-    ).forEach { repository ->
-        "test $repository" {
-            val destination: Path = createTempDirectory(repository)
-            shellRun(
-                "git",
-                listOf("clone", "https://github.com/$organization/$repository.git", destination.absolutePathString()),
-            )
-            val buildFileName = "build.gradle.kts"
-            destination.shouldContainFile(buildFileName)
-            destination.shouldContainFile("settings.gradle.kts")
-            val buildFile = File(destination.toFile(), buildFileName)
-            val buildFileContent = buildFile
-                .readText()
-                .replace(
-                    Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
-                    "",
+        listOf(
+            "OOP22-Giamperoli-Sonofapo-jtrs",
+            "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
+            "OOP23-Azael-Fu-Jiaqi-Jiekai-Sun-Sun-ObjectMon",
+            "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
+            "OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast",
+        ).forEach { repository ->
+            "test $repository" {
+                val destination: Path = createTempDirectory(repository)
+                shellRun(
+                    "git",
+                    listOf(
+                        "clone",
+                        "https://github.com/$organization/$repository.git",
+                        destination.absolutePathString(),
+                    ),
                 )
-            val pluginsMatch = pluginsBlock.find(buildFileContent)
-            checkNotNull(pluginsMatch)
-            val newContent = buildFileContent.replaceRange(
-                pluginsMatch.range.last..pluginsMatch.range.last,
-                "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
-            )
-            buildFile.writeText(newContent)
-            val destinationFile = destination.toFile()
-            val result = with(GradleRunner.create()) {
-                withProjectDir(destinationFile)
-                withArguments("blame", "--stacktrace")
-                withPluginClasspath()
-                build()
+                val buildFileName = "build.gradle.kts"
+                destination.shouldContainFile(buildFileName)
+                destination.shouldContainFile("settings.gradle.kts")
+                val buildFile = File(destination.toFile(), buildFileName)
+                val buildFileContent =
+                    buildFile
+                        .readText()
+                        .replace(
+                            Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
+                            "",
+                        )
+                val pluginsMatch = pluginsBlock.find(buildFileContent)
+                checkNotNull(pluginsMatch)
+                val newContent =
+                    buildFileContent.replaceRange(
+                        pluginsMatch.range.last..pluginsMatch.range.last,
+                        "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
+                    )
+                buildFile.writeText(newContent)
+                val destinationFile = destination.toFile()
+                val result =
+                    with(GradleRunner.create()) {
+                        withProjectDir(destinationFile)
+                        withArguments("blame", "--stacktrace")
+                        withPluginClasspath()
+                        build()
+                    }
+                requireNotNull(result.tasks.find { it.path == ":blame" }).outcome shouldBe TaskOutcome.SUCCESS
+                val blame = File(destinationFile, "build/blame.md")
+                blame.shouldExist()
+                blame.shouldNotBeEmpty()
+                destinationFile.deleteRecursively()
             }
-            requireNotNull(result.tasks.find { it.path == ":blame" }).outcome shouldBe TaskOutcome.SUCCESS
-            val blame = File(destinationFile, "build/blame.md")
-            blame.shouldExist()
-            blame.shouldNotBeEmpty()
-            destinationFile.deleteRecursively()
         }
-    }
-})
+    })

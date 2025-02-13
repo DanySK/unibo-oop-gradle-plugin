@@ -32,13 +32,12 @@ private val suffixMatches = Regex("extension|plugin")
 private inline fun <reified T> Project.configureExtension(
     name: String = T::class.simpleName().lowercase().replace(suffixMatches, ""),
     crossinline action: T.() -> Unit,
-) =
-    extensions.getByName(name).let {
-        when (it) {
-            is T -> it.action()
-            else -> error("Cannot configure $name: expected ${T::class.simpleName}, found ${it::class.simpleName}")
-        }
+) = extensions.getByName(name).let {
+    when (it) {
+        is T -> it.action()
+        else -> error("Cannot configure $name: expected ${T::class.simpleName}, found ${it::class.simpleName}")
     }
+}
 
 private inline fun <reified T : Task> Project.registerTask(
     name: String,
@@ -77,71 +76,78 @@ open class OOPProjectEvalPlugin : Plugin<Project> {
                     it.text.required.set(true)
                 }
                 language = "java"
-                minimumTokenCount = cpdTokens
+                minimumTokenCount = CPD_TOKENS
                 ignoreFailures = true
                 configureExtension<JavaPluginExtension> {
                     source = sourceSets["main"].allJava + sourceSets["test"].allJava
                 }
             }
             registerTask<Task>("blame") {
-                val dependencies = tasks.withType<Checkstyle>() +
-                    tasks.withType<org.gradle.api.plugins.quality.Pmd>() +
-                    tasks.withType<SpotBugsTask>() +
-                    tasks.withType<Cpd>()
+                val dependencies =
+                    tasks.withType<Checkstyle>() +
+                        tasks.withType<org.gradle.api.plugins.quality.Pmd>() +
+                        tasks.withType<SpotBugsTask>() +
+                        tasks.withType<Cpd>()
                 dependsOn(dependencies)
                 dependencies.forEach { it.dependsOn(removeSuppressions) }
                 val identifier = if (project == rootProject) "" else "-${project.name}"
                 val output = project.layout.buildDirectory.file("blame$identifier.md")
                 outputs.file(output)
                 doLast { _ ->
-                    val factory = javax.xml.parsers.DocumentBuilderFactory.newInstance()
+                    val factory =
+                        javax.xml.parsers.DocumentBuilderFactory
+                            .newInstance()
                     val xmlParser = factory.newDocumentBuilder()
-                    val errors = dependencies
-                        .flatMap { task ->
-                            task.outputs.files.asIterable().filter { it.exists() && it.extension == "xml" }
-                        }
-                        .filter { it.exists() && it.length() > 0 }
-                        .flatMap<File, QAInfo> {
-                            val root: org.w3c.dom.Element = xmlParser.parse(it).documentElement
-                            when (root.tagName) {
-                                "pmd" -> PmdQAInfoExtractor(root)
-                                "pmd-cpd" -> CpdQAInfoExtractor(root)
-                                "checkstyle" -> CheckstyleQAInfoExtractor(root)
-                                "BugCollection" -> SpotBugsQAInfoExtractor(root)
-                                else -> emptyList<QAInfo>().also { println("Unknown root type ${root.tagName}") }
-                            }
-                        }
-                        .distinct()
-                    val errorsByStudentByChecker: Map<String, Map<String, List<QAInfo>>> = errors
-                        .flatMap { error -> error.blamedTo.map { it to error } }
-                        .groupBy { it.first }
-                        .mapValues { (_, errors) -> errors.map { it.second }.groupBy { it.checker } }
-                    val report = errorsByStudentByChecker.map { (student, errors) ->
-                        """
-                        |# $student
-                        |
-                        |${errors.map { it.value.size }.sum()} violations
-                        |${errors.map { (checker, violations) ->
-                            """
-                            |## $checker: ${violations.size} mistakes
-                            ${
-                                violations.sortedBy { it.details }.joinToString("") {
-                                    val fileName = File(it.file).name
-                                    "|* ${it.details.endingWith(".")} In: $fileName@[${it.lines}]\n"
-                                }.trimEnd()
-                            }
-                            """
-                        }.joinToString(separator = "", prefix = "", postfix = "")}
-                        |
-                        """.trimMargin()
-                    }.joinToString(separator = "", prefix = "", postfix = "")
+                    val errors =
+                        dependencies
+                            .flatMap { task ->
+                                task.outputs.files
+                                    .asIterable()
+                                    .filter { it.exists() && it.extension == "xml" }
+                            }.filter { it.exists() && it.length() > 0 }
+                            .flatMap<File, QAInfo> {
+                                val root: org.w3c.dom.Element = xmlParser.parse(it).documentElement
+                                when (root.tagName) {
+                                    "pmd" -> PmdQAInfoExtractor(root)
+                                    "pmd-cpd" -> CpdQAInfoExtractor(root)
+                                    "checkstyle" -> CheckstyleQAInfoExtractor(root)
+                                    "BugCollection" -> SpotBugsQAInfoExtractor(root)
+                                    else -> emptyList<QAInfo>().also { println("Unknown root type ${root.tagName}") }
+                                }
+                            }.distinct()
+                    val errorsByStudentByChecker: Map<String, Map<String, List<QAInfo>>> =
+                        errors
+                            .flatMap { error -> error.blamedTo.map { it to error } }
+                            .groupBy { it.first }
+                            .mapValues { (_, errors) -> errors.map { it.second }.groupBy { it.checker } }
+                    val report =
+                        errorsByStudentByChecker
+                            .map { (student, errors) ->
+                                """
+                                |# $student
+                                |
+                                |${errors.map { it.value.size }.sum()} violations
+                                |${errors.map { (checker, violations) ->
+                                    """
+                                    |## $checker: ${violations.size} mistakes
+                                    ${
+                                        violations.sortedBy { it.details }.joinToString("") {
+                                            val fileName = File(it.file).name
+                                            "|* ${it.details.endingWith(".")} In: $fileName@[${it.lines}]\n"
+                                        }.trimEnd()
+                                    }
+                                    """
+                                }.joinToString(separator = "", prefix = "", postfix = "")}
+                                |
+                                """.trimMargin()
+                            }.joinToString(separator = "", prefix = "", postfix = "")
                     file(output).writeText(report)
                 }
             }
         }
     }
 
-    companion object {
-        private const val cpdTokens = 50
+    private companion object {
+        private const val CPD_TOKENS = 50
     }
 }
