@@ -2,7 +2,6 @@
 
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     `java-gradle-plugin`
     alias(libs.plugins.dokka)
