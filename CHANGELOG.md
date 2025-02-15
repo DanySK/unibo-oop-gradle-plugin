@@ -1,3 +1,42 @@
+## [1.1.1](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.0...1.1.1) (2025-02-15)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.10.2 ([#170](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/170)) ([f0033a2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f0033a27500fd3a869ff5a45990af34120140815))
+* **core-deps:** update dependency gradle to v8.12.1 ([#182](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/182)) ([36a7715](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/36a7715356af808d08b39100d2b149f54aaa1f65))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.70.0 ([#192](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/192)) ([a17b33a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a17b33a213a9b6fabc302eda8a71179af007582b))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.74.0 ([#197](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/197)) ([c19b913](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c19b913e0ce3a11fb049463ba47efcdf6acd01de))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.75.0 ([#198](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/198)) ([a8b28da](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a8b28dab556d0681729d02ab892df5633462aec2))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.76.0 ([#199](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/199)) ([06cad5e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/06cad5e77e9e22d1b22d5169763b2387d6422f18))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.83.0 ([#206](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/206)) ([fa2e53e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/fa2e53eb96bcd6492ff05096b35be6accc733691))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.87.0 ([#210](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/210)) ([070ad22](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/070ad228b5de65522f55e080538a4fe351a8f460))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.88.0 ([#211](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/211)) ([4dd5cdd](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/4dd5cddb028ea7b9fe353a3322c551ab20639264))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.89.0 ([#212](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/212)) ([fa694db](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/fa694db4da5332dbd14574c3e52279be5ee8103a))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.91.0 ([#214](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/214)) ([594363b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/594363b0cd631a1c0756cfd39e38c805307a978a))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.94.0 ([#217](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/217)) ([ab79b99](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ab79b99c2e2c7c41537364533f308cb702ac998f))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.95.0 ([#218](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/218)) ([39eefc8](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/39eefc8f1b4ec81f9b83caf515bdcc2768a9f643))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.122 ([#180](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/180)) ([d4e5fcd](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d4e5fcd52f29e677154f8f8e931a2cad3fffe32a))
+* **deps:** update node.js to v22 ([#169](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/169)) ([cc030e7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/cc030e762aa3667c2fad92ce7edfec80c353f321))
+* **deps:** update plugin gitsemver to v3.1.10 ([#181](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/181)) ([c40fd08](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c40fd08bd048748a8f6bbf2e69f359cbaefbb1b9))
+* **deps:** update plugin gitsemver to v4 ([#224](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/224)) ([42407e6](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/42407e67cf74dba45bfb1347ea0444e86cef2ab4))
+* **deps:** update plugin gradlepluginpublish to v1.2.2 ([#161](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/161)) ([7c68212](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7c6821274b5275393de3af4ea06e1c9442b3a63b))
+* **deps:** update plugin gradlepluginpublish to v1.3.1 ([#219](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/219)) ([7ba4897](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7ba489729e4b87dbc15d3f17c5b55a3fbdc75088))
+* **deps:** update plugin multijvmtesting to v1 ([#152](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/152)) ([49cb597](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/49cb59772f8090d631fbb6d1af488d8d46158094))
+* **deps:** update plugin multijvmtesting to v3 ([#226](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/226)) ([9eba2e5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9eba2e55e9e9cc28f09698f17323e878bf2dd4ab))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.20 ([#153](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/153)) ([dbf22a7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/dbf22a7d1548da3b0e9c2f7fd971b39a65e91be8))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v0.9.0 ([#220](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/220)) ([af9469a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/af9469a1043b5a744bb8cc8fd308cc483c270577))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.2.2 ([#221](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/221)) ([568c5f0](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/568c5f0df9586a2f7c8bcc0cc73cc8b82711b929))
+* **deps:** update actions/setup-node action to v4.0.4 ([#150](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/150)) ([c3b93ff](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c3b93ffb6e3c93e071663d17e3c258787218f5bd))
+* **deps:** update actions/setup-node action to v4.2.0 ([#223](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/223)) ([5118ce0](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5118ce08110e688a6ac5e3dc230ae309b3efd651))
+* **deps:** update danysk/action-checkout action to v0.2.22 ([#165](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/165)) ([8ed9035](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8ed9035c5b64470a5ee5a1ccca7280ab4aa1138c))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.24 ([#145](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/145)) ([9ca7792](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9ca77929ade9c2753ae126cd5a5d662508f9c028))
+* **deps:** update dependency ubuntu github actions runner to v24 ([#166](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/166)) ([dfa7986](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/dfa79866e4a565ee793b01b95e4c59204076c9da))
+* **deps:** update dependency ubuntu to v24 ([#167](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/167)) ([885b871](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/885b871ba18497ee9db0b475cda029d8294faae9))
+* **release:** fix the release task name ([7325835](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/73258354e11f13de043c6ca50078267ad07fa35c))
+
 ## [1.1.0](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.0.13...1.1.0) (2025-02-13)
 
 
