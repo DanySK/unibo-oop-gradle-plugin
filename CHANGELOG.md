@@ -1,3 +1,9 @@
+## [1.1.11](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.10...1.1.11) (2025-03-06)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.103.0 ([#248](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/248)) ([3ee2357](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3ee2357c75fb721da0447d0b3312fb876cff71ce))
+
 ## [1.1.10](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.9...1.1.10) (2025-03-04)
 
 ### Dependency updates
