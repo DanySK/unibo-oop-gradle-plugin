@@ -1,3 +1,11 @@
+## [1.1.18](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.17...1.1.18) (2025-04-25)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14 ([#282](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/282)) ([0a3868b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0a3868bddb77a0163f80a3199e4c2693ea8ea6ff))
+* **deps:** update node.js to 22.15 ([#281](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/281)) ([b38a467](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b38a467987d1d518151c3495c3956ea4c83dfaa0))
+* **deps:** update plugin gitsemver to v5.1.2 ([#284](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/284)) ([e15a0a5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e15a0a5ac0ac04e87206711b9db1b7760478cfdc))
+
 ## [1.1.17](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.16...1.1.17) (2025-04-22)
 
 ### Dependency updates
