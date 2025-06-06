@@ -1,3 +1,9 @@
+## [1.1.30](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.29...1.1.30) (2025-06-06)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14.2 ([#326](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/326)) ([f02aa90](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f02aa90daca2b712a9068b7122f853aebd7fe52a))
+
 ## [1.1.29](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.28...1.1.29) (2025-06-01)
 
 ### Dependency updates
