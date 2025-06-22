@@ -1,3 +1,14 @@
+## [1.1.32](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.31...1.1.32) (2025-06-22)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.120.0 ([#335](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/335)) ([d39c4c1](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d39c4c12716f3cf02a3e7a77c5c5e58d049ee1ad))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4 ([#332](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/332)) ([5abe957](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5abe957f604904c76d36b28288474c5aaea37e83))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.1 ([#334](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/334)) ([b8f3a0b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b8f3a0b8682f9fdefcae191e5be6bdb0824abf6a))
+
 ## [1.1.31](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.30...1.1.31) (2025-06-09)
 
 ### Dependency updates
