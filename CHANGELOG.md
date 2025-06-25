@@ -1,3 +1,12 @@
+## [1.1.34](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.33...1.1.34) (2025-06-25)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.121.0 ([#341](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/341)) ([276d3fb](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/276d3fb026087bfa24f214bac752a782d5acce0e))
+* **deps:** update plugin kotlin-qa to v0.89.2 ([#338](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/338)) ([87d7632](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/87d7632fb430488da576c2156f8ceac813f60671))
+* **deps:** update plugin multijvmtesting to v3.5.2 ([#339](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/339)) ([ce039c5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ce039c55219a42c8961fa3b86c793bc8de7ad726))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.27 ([#340](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/340)) ([f06458d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f06458d9addde637d6ba46e48ef7408e5dfce314))
+
 ## [1.1.33](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.32...1.1.33) (2025-06-24)
 
 ### Dependency updates
