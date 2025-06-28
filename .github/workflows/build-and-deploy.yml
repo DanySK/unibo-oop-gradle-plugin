@@ -15,14 +15,12 @@ jobs:
         uses: DanySK/action-checkout@0.2.22
       - uses: DanySK/build-check-deploy-gradle-action@4.0.1
         with:
-          # Dry-deployment
-          check-command: ./gradlew build --parallel
+          # Dry-deployment, remove --dry-run to actually deploy
           deploy-command: >-
             ./gradlew
-            uploadAll
-            close
-            dropStagingRepositoryOnMavenCentral
-            --parallel
+            publishAllPublicationsToProjectLocalRepository
+            zipMavenCentralPortalPublication
+            releaseMavenCentralPortalPublication
           should-run-codecov: ${{ runner.os == 'Linux' }}
           should-deploy: >-
             ${{
