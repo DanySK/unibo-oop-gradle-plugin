@@ -1,3 +1,18 @@
+## [1.1.37](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.36...1.1.37) (2025-06-29)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.123.0 ([c62d4a2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c62d4a2570b187274da91b3e5f0d9c5aeda34281))
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.2.0 ([36074de](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/36074dead0ba789d4635af55bb87fd86b08ac1a4))
+* **deps:** update plugin kotlin-qa to v0.90.0 ([5418105](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/54181057cab7377c633601f38caf8f40e167e812))
+* **deps:** update plugin multijvmtesting to v3.5.2 ([3383a43](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3383a43fdb7ce16d4c4eb76dbed46eb9b510bb3d))
+* **deps:** update plugin publishoncentral to v9.0.6 ([#351](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/351)) ([05e65ba](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/05e65ba6ee6e460c2a1166d8d977d745b4100b79))
+
+### Build and continuous integration
+
+* **codecov:** provide a codecov token ([4c40899](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/4c40899a89e3491000e688d13c0b58b72405d982))
+* **release:** switch to Maven Central Portal ([5551ec2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5551ec20ec9b85560dbf7bc7ce560bf0c9ab25fc))
+
 ## [1.1.36](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.35...1.1.36) (2025-06-28)
 
 ### Dependency updates
