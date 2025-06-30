@@ -1,3 +1,17 @@
+## [1.1.38](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.37...1.1.38) (2025-06-30)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.123.1 ([#352](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/352)) ([54f2d77](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/54f2d77b45853ebe213fab99ceb6db4de068a1d5))
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.124.0 ([#355](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/355)) ([3beab32](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3beab326dc20f1220abe82b5576a21bc47318a18))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.134 ([#356](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/356)) ([0664e78](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0664e78d6a160e2158db2a42df804ea4c8679406))
+* **deps:** update plugin gitsemver to v5.1.5 ([#353](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/353)) ([6a41fa7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6a41fa7bac1981fa9154e753d6a1c09070b110c8))
+* **deps:** update plugin kotlin-qa to v0.90.1 ([#354](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/354)) ([876475a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/876475a45336d13cae864b7c86026a088fbcce54))
+
+### Build and continuous integration
+
+* disable automatic releases for every unstable version ([f202b2a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f202b2a6f7badc4e152e005d45f4197a201958f7))
+
 ## [1.1.37](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.36...1.1.37) (2025-06-29)
 
 ### Dependency updates
