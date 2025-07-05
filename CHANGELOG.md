@@ -1,3 +1,14 @@
+## [1.1.39](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.38...1.1.39) (2025-07-05)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14.3 ([#360](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/360)) ([4fb6de6](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/4fb6de676ad4186792fe359558f83c2fd2a76047))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.135 ([#359](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/359)) ([0d9555d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0d9555d0114108dd970e9d6631dba80695a41a5b))
+* **deps:** update plugin gitsemver to v5.1.6 ([#357](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/357)) ([169c0d5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/169c0d543d88a9de112b7942b078859e8c4ffef8))
+* **deps:** update plugin kotlin-qa to v0.90.2 ([#362](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/362)) ([43f8819](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/43f8819daaf45a3b5eed03279721d71fcbef9d40))
+* **deps:** update plugin multijvmtesting to v3.5.3 ([#358](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/358)) ([a3d3e31](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a3d3e31a5cb7de9b52399e40d15035cfe9aa6fed))
+* **deps:** update plugin multijvmtesting to v3.5.4 ([#363](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/363)) ([08afe17](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/08afe17f0d1193aadcee7b4beda1c1637a107b2f))
+
 ## [1.1.38](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.37...1.1.38) (2025-06-30)
 
 ### Dependency updates
