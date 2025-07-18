@@ -1,11 +1,11 @@
 package it.unibo.projecteval
 
+import java.io.File
 import org.gradle.api.DefaultTask
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.OutputFiles
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.get
-import java.io.File
 
 /**
  * This task removes all warning suppressions from the source code.
@@ -29,17 +29,15 @@ open class RemoveSuppressions : DefaultTask() {
      * Removes all suppressions from the source code.
      */
     @TaskAction
-    fun removeAllSuppressions() =
-        allSource
-            .asSequence()
-            .filter { it.extension == "java" }
-            .forEach { file ->
-                var contents = file.readText()
-                for (suppression in suppressions) {
-                    contents = contents.replace(suppression, "")
-                }
-                file.writeText(contents)
+    fun removeAllSuppressions() = allSource.asSequence()
+        .filter { it.extension == "java" }
+        .forEach { file ->
+            var contents = file.readText()
+            for (suppression in suppressions) {
+                contents = contents.replace(suppression, "")
             }
+            file.writeText(contents)
+        }
 
     private companion object {
         private val suppressions: List<Regex> =

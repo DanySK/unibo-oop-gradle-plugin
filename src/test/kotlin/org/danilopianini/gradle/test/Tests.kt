@@ -6,13 +6,13 @@ import io.kotest.matchers.file.shouldExist
 import io.kotest.matchers.file.shouldNotBeEmpty
 import io.kotest.matchers.paths.shouldContainFile
 import io.kotest.matchers.shouldBe
-import org.gradle.testkit.runner.GradleRunner
-import org.gradle.testkit.runner.TaskOutcome
 import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
 import kotlin.text.RegexOption.MULTILINE
+import org.gradle.testkit.runner.GradleRunner
+import org.gradle.testkit.runner.TaskOutcome
 
 class Tests :
     StringSpec({

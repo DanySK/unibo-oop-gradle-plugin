@@ -4,15 +4,14 @@ import it.unibo.projecteval.Extensions.blameFor
 import it.unibo.projecteval.Extensions.childrenNamed
 import it.unibo.projecteval.Extensions.get
 import it.unibo.projecteval.Extensions.toIterable
-import org.w3c.dom.Element
 import java.io.File
+import org.w3c.dom.Element
 
 /**
  * Extracts QA information from CPD reports.
  */
-class CpdQAInfoExtractor(
-    root: Element,
-) : QAInfoContainer by (
+class CpdQAInfoExtractor(root: Element) :
+    QAInfoContainer by (
         root.childNodes
             .toIterable()
             .asSequence()
@@ -40,4 +39,4 @@ class CpdQAInfoExtractor(
                     blamed,
                 )
             }.asIterable()
-    )
+        )

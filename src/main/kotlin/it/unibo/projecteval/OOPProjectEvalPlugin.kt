@@ -4,6 +4,8 @@ import com.github.spotbugs.snom.SpotBugsTask
 import de.aaschmid.gradle.plugins.cpd.Cpd
 import de.aaschmid.gradle.plugins.cpd.CpdExtension
 import it.unibo.projecteval.Extensions.endingWith
+import java.io.File
+import kotlin.reflect.KClass
 import org.danilopianini.javaqa.JavaQAPlugin
 import org.gradle.api.DomainObjectCollection
 import org.gradle.api.Plugin
@@ -19,8 +21,6 @@ import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.withType
-import java.io.File
-import kotlin.reflect.KClass
 
 private fun KClass<*>.simpleName(): String = requireNotNull(this.simpleName) { "Cannot get simple name for $this" }
 
