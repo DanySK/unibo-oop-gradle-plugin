@@ -7,12 +7,9 @@ import it.unibo.projecteval.Extensions.toIterable
 /**
  * Extracts QA information from PMD reports.
  */
-class PmdQAInfoExtractor(
-    root: org.w3c.dom.Element,
-) : QAInfoContainer by (
-        root.childNodes
-            .toIterable()
-            .asSequence()
+class PmdQAInfoExtractor(root: org.w3c.dom.Element) :
+    QAInfoContainer by (
+        root.childNodes.toIterable().asSequence()
             .filter { it.nodeName == "file" }
             .flatMap { file -> file.childrenNamed("violation").map { file to it } }
             .map { (file, violation) ->
@@ -23,4 +20,4 @@ class PmdQAInfoExtractor(
                     "[${violation["ruleset"].uppercase()}] ${violation.textContent.trim()}",
                 )
             }.asIterable()
-    )
+        )
