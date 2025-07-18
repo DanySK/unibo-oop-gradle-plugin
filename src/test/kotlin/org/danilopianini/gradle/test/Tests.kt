@@ -26,6 +26,7 @@ class Tests :
             "OOP23-Azael-Fu-Jiaqi-Jiekai-Sun-Sun-ObjectMon",
             "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
             "OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast",
+            "OOP24-Claudio-ClaudioLodi-LodiClaudio-LuigiLinari-Tbandini-TommasoBandini-TommasoGoni-Emberline",
         ).forEach { repository ->
             "test $repository" {
                 val destination: Path = createTempDirectory(repository)
