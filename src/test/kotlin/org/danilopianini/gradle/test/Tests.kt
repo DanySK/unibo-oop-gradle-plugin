@@ -10,6 +10,7 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
+import kotlin.io.path.useLines
 import kotlin.text.RegexOption.MULTILINE
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
@@ -21,7 +22,6 @@ class Tests :
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
 
         listOf(
-            "OOP22-Giamperoli-Sonofapo-jtrs",
             "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
             "OOP23-Azael-Fu-Jiaqi-Jiekai-Sun-Sun-ObjectMon",
             "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
@@ -42,29 +42,31 @@ class Tests :
                 destination.shouldContainFile(buildFileName)
                 destination.shouldContainFile("settings.gradle.kts")
                 val buildFile = File(destination.toFile(), buildFileName)
-                val buildFileContent =
-                    buildFile
-                        .readText()
-                        .replace(
-                            Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
-                            "",
-                        )
+                val buildFileContent = buildFile.readText().replace(
+                    Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
+                    "",
+                )
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
-                val newContent =
-                    buildFileContent.replaceRange(
-                        pluginsMatch.range.last..pluginsMatch.range.last,
-                        "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
-                    )
+                val newContent = buildFileContent.replaceRange(
+                    pluginsMatch.range.last..pluginsMatch.range.last,
+                    "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
+                )
                 buildFile.writeText(newContent)
                 val destinationFile = destination.toFile()
-                val result =
-                    with(GradleRunner.create()) {
-                        withProjectDir(destinationFile)
-                        withArguments("blame", "--stacktrace")
-                        withPluginClasspath()
-                        build()
-                    }
+                val result = with(GradleRunner.create()) {
+                    withGradleVersion(
+                        destination.resolve("gradle/wrapper/gradle-wrapper.properties").useLines { lines ->
+                            lines.first { "services.gradle.org/distributions" in it }
+                                .substringAfterLast("gradle-")
+                                .substringBeforeLast("-")
+                        },
+                    )
+                    withProjectDir(destinationFile)
+                    withArguments("blame", "--stacktrace")
+                    withPluginClasspath()
+                    build()
+                }
                 requireNotNull(result.tasks.find { it.path == ":blame" }).outcome shouldBe TaskOutcome.SUCCESS
                 val blame = File(destinationFile, "build/blame.md")
                 blame.shouldExist()

@@ -24,7 +24,7 @@ import org.gradle.kotlin.dsl.withType
 
 private fun KClass<*>.simpleName(): String = requireNotNull(this.simpleName) { "Cannot get simple name for $this" }
 
-private inline fun <T> DomainObjectCollection<T>.configuration(crossinline action: T.() -> Unit) =
+private inline fun <T : Any> DomainObjectCollection<T>.configuration(crossinline action: T.() -> Unit) =
     configureEach { it.action() }
 
 private val suffixMatches = Regex("extension|plugin")
