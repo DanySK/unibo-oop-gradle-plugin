@@ -1,3 +1,17 @@
+## [1.1.47](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.46...1.1.47) (2025-08-12)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v9 ([#394](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/394)) ([34612f8](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/34612f80bb5463615dff3175aa5136b4e80a26f7))
+* **deps:** update plugin gitsemver to v5.1.8 ([#395](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/395)) ([c67a3fb](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c67a3fb2d72cf820be8da3787af3cda2888b3c19))
+* **deps:** update plugin gitsemver to v6 ([#396](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/396)) ([905f442](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/905f442595d0c3d07d34e10bb0b6f325c555e63d))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.3.0 ([#391](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/391)) ([3f587bf](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3f587bfbf715edb244278b6f19d1df959a9b5821))
+* **deps:** update actions/checkout action to v5 ([#392](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/392)) ([0cddab7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0cddab79a1c178c2f93fd8747223323e2a4f540f))
+* **deps:** update danysk/action-checkout action to v0.2.24 ([#393](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/393)) ([0770576](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0770576675fccfdd4297304dfce104e3091eb4da))
+
 ## [1.1.46](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.45...1.1.46) (2025-08-10)
 
 ### Dependency updates
