@@ -1,7 +1,7 @@
 [versions]
 dokka = "2.0.0"
 kotest = "5.9.1"
-kotlin = "2.2.0"
+kotlin = "2.2.10"
 
 [libraries]
 java-qa = "org.danilopianini:gradle-java-qa:1.130.0"
