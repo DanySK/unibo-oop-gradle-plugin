@@ -19,7 +19,7 @@ plugins {
 group = "org.danilopianini"
 description = "Project evaluation tools for OOP projects @ UniBo"
 
-inner class ProjectInfo {
+class ProjectInfo {
     val longName = "Unibo OOP Projects Evaluation Tools"
     val website = "https://github.com/DanySK/$name"
     val vcsUrl = "$website.git"
