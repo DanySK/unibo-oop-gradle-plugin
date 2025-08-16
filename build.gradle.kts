@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLTS
+
 plugins {
     `java-gradle-plugin`
     alias(libs.plugins.dokka)
@@ -39,8 +41,8 @@ repositories {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(17)
-    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+    jvmVersionForCompilation = oldestJavaSupportedByGradle
+    maximumSupportedJvmVersion = (oldestJavaSupportedByGradle..latestJavaSupportedByGradle).last { it.isLTS }
 }
 
 dependencies {
