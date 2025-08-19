@@ -1,3 +1,20 @@
+## [1.1.49](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.48...1.1.49) (2025-08-19)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.131.0 ([#412](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/412)) ([5025eb6](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5025eb6b3e253886a6eeabd8df5e92c38de9dc0b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.140 ([#410](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/410)) ([87635d8](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/87635d8f5f144dd7f2c8bc367ef33f2335289e72))
+* **deps:** update plugin gitsemver to v6.0.1 ([#405](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/405)) ([f878f57](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f878f57db55edd13055fe9984aef8866394e0281))
+* **deps:** update plugin kotlin-qa to v0.93.2 ([#407](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/407)) ([5f78373](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5f7837389be4d13dd3d9d521f98335d41309e01d))
+* **deps:** update plugin kotlin-qa to v0.93.3 ([#409](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/409)) ([d03b086](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d03b08689f2222d1773de98bef1c76135b1ed467))
+* **deps:** update plugin multijvmtesting to v4.0.3 ([#403](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/403)) ([b720cfe](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b720cfe409903814dd662938338f85b3d55aca95))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.30 ([#408](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/408)) ([e3ff513](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e3ff513d2b3fee8ef1e942b8770f9d1512a8560f))
+
+### Build and continuous integration
+
+* remove `inner` modifier from top-level script class ([48f1040](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/48f1040c4cb54c4af03a586ad458cb368b1ca6b1))
+* restrict support to the LTS versions supported by Gradle ([5f8df1d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5f8df1d316e148904d1a3a91f53ce6601cd8d29f))
+
 ## [1.1.48](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.47...1.1.48) (2025-08-14)
 
 ### Dependency updates
