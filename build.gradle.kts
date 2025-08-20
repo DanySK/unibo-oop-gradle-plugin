@@ -51,6 +51,7 @@ dependencies {
     api(kotlin("stdlib-jdk8"))
     api(libs.java.qa)
     api(libs.kotlin.gradle.plugin.api)
+    testImplementation(libs.classgraph)
     testImplementation(libs.bundles.kotlin.testing)
     testImplementation(libs.turtle)
 }
