@@ -1,6 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLTS
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     `java-gradle-plugin`
@@ -85,10 +86,7 @@ tasks.withType<Test>().configureEach {
         showStandardStreams = true
         showCauses = true
         showStackTraces = true
-        events(
-            *org.gradle.api.tasks.testing.logging.TestLogEvent
-                .values(),
-        )
+        events(*TestLogEvent.entries.toTypedArray())
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
 }
