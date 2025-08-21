@@ -12,6 +12,7 @@ import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
 import kotlin.io.path.useLines
 import kotlin.text.RegexOption.MULTILINE
+import kotlin.time.Duration.Companion.minutes
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
 
@@ -29,6 +30,7 @@ class Tests :
             "OOP24-Claudio-ClaudioLodi-LodiClaudio-LuigiLinari-Tbandini-TommasoBandini-TommasoGoni-Emberline",
         ).forEach { repository ->
             "test $repository" {
+                timeout = 20.minutes.inWholeMilliseconds
                 val destination: Path = createTempDirectory(repository)
                 shellRun(
                     "git",
