@@ -1,3 +1,28 @@
+## [1.1.50](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.49...1.1.50) (2025-08-28)
+
+### Dependency updates
+
+* **deps:** update kotest to v6 (major) ([868eda2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/868eda2f5e8a96a7ed9962397606eacf4afa19ff))
+* **deps:** update kotest to v6.0.1 ([#418](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/418)) ([86cd82b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/86cd82b35dc6bcd8d12ef9cfd3eb580bf7dd22ef))
+* **deps:** update plugin com.gradle.develocity to v4.1.1 ([#413](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/413)) ([d9e0230](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d9e0230254fe563d38a2f1508717ec61a8028ba5))
+* **deps:** update plugin gitsemver to v6.0.2 ([#414](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/414)) ([a81045c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a81045c9b97df4407291722f341d7e5982fb931c))
+* **deps:** update plugin gitsemver to v7 ([#415](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/415)) ([8fa512d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8fa512d52edbbf69ea05adac9b3d13e7a357e9f7))
+* **deps:** update plugin kotlin-qa to v0.94.0 ([#417](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/417)) ([e252eea](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e252eeaf8fa60c8044e1f255a4fa1ffcb892d21d))
+
+### Bug Fixes
+
+* update suppression regex to allow optional leading comments ([edfc012](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/edfc01257090fb2d6fd73d48393cfd34df3a7399))
+
+### Tests
+
+* set a 20 minutes timeout (windows builds are very slow) ([5cb8c34](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5cb8c3458c4cdb8449252b85940969308997e8bd))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.5 ([#416](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/416)) ([5fb1ef4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5fb1ef446a3fcd6279ae9f477483a08e99404102))
+* fuck windows ([3516563](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3516563f6b239b2cd8a206d5bd7cea08bb8a12f0))
+* replace deprecated method with `Enum.entries` ([d6c512f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d6c512fa19c1e4061b3fefa546c5ab0fbffee765))
+
 ## [1.1.49](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.48...1.1.49) (2025-08-19)
 
 ### Dependency updates
