@@ -28,6 +28,7 @@ class Tests :
             "OOP23-AlexGuerrini-AndreaSamori-DaviBart-MattiaRonchi-coloni-ces",
             "OOP24-AisjaBaglioni-BeatriceDiGregorio-Chiaradenardi-Fede-puyo-blast",
             "OOP24-Claudio-ClaudioLodi-LodiClaudio-LuigiLinari-Tbandini-TommasoBandini-TommasoGoni-Emberline",
+            "OOP24-FrancescoSacripante-MatteoCaruso-MatteoCeccarelli-risikoop",
         ).forEach { repository ->
             "test $repository" {
                 timeout = 20.minutes.inWholeMilliseconds

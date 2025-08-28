@@ -43,7 +43,7 @@ open class RemoveSuppressions : DefaultTask() {
         private val suppressions: List<Regex> =
             listOf(
                 Regex(
-                    """@SuppressF?B?Warnings(\s*\(((\s*\w+\s*=\s*\".*?\"\s*,?)*|.*?)\))?\R?\s*((//.*?)?\R)?""",
+                    """(//+\s*)?@SuppressF?B?Warnings(\s*\(((\s*\w+\s*=\s*\".*?\"\s*,?)*|.*?)\))?\R?\s*((//.*?)?\R)?""",
                     RegexOption.DOT_MATCHES_ALL,
                 ),
                 Regex("""import(\s|\R)+edu\.umd\.cs\.findbugs\.annotations\.SuppressFBWarnings(\s|\R)*;"""),
