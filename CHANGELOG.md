@@ -1,3 +1,13 @@
+## [1.1.51](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.50...1.1.51) (2025-08-31)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.132.0 ([#419](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/419)) ([e37c86c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e37c86cb52eaa56c503f834a34af857056c25818))
+
+### Style improvements
+
+* simplify task configuration and report generation in OOPProjectEvalPlugin ([498a0f4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/498a0f4c90de12c664aa2e719171d5b492278c8b))
+
 ## [1.1.50](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.49...1.1.50) (2025-08-28)
 
 ### Dependency updates
