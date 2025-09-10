@@ -1,3 +1,15 @@
+## [1.1.54](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.53...1.1.54) (2025-09-10)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v2.2.20 ([#431](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/431)) ([2c48e5b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/2c48e5bd464803ea243518b1b83b13155939ddbd))
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.2.20 ([#432](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/432)) ([d662c97](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d662c976d45c8f793e8ad9fd0d1b9299d96ea5eb))
+* **deps:** update plugin kotlin-qa to v0.94.1 ([#433](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/433)) ([4134dc5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/4134dc5d10a81c70593fbb33c1e6e5ee64d4608e))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.7 ([#430](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/430)) ([572316b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/572316b9fd679161f9059e733a9f6d51970d6eec))
+
 ## [1.1.53](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.52...1.1.53) (2025-09-08)
 
 ### Dependency updates
