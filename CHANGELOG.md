@@ -1,3 +1,16 @@
+## [1.1.55](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.54...1.1.55) (2025-09-14)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.136.0 ([#440](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/440)) ([7505f31](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7505f31d7a4df9d91325b8a51e94ea149b11fc54))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.142 ([#438](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/438)) ([08e091d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/08e091dce4faefdaa3026f1faea81211e8a33882))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.143 ([#439](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/439)) ([59878ad](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/59878ade38c74b848051b238ff177b62056a9ede))
+* **deps:** update plugin gitsemver to v7.0.3 ([#436](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/436)) ([d74dc12](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d74dc12055ac965df8de9db69cf62da050ba3ef2))
+* **deps:** update plugin kotlin-qa to v0.95.0 ([#441](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/441)) ([c3d5260](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c3d5260992bfa5e272ac92d74e60b589c6c41f6b))
+* **deps:** update plugin multijvmtesting to v4.1.1 ([#434](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/434)) ([1c297fb](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/1c297fb68d4d5bdbe7c363fce97a04dabde53cad))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.1 ([#437](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/437)) ([6cdcfc6](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6cdcfc6afffc0604fd25a5967236c25a8334e0b0))
+* **deps:** update plugin publishoncentral to v9.1.4 ([#435](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/435)) ([168a4b7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/168a4b74f4ce12fc20ecbb91e020d85246c32dca))
+
 ## [1.1.54](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.53...1.1.54) (2025-09-10)
 
 ### Dependency updates
