@@ -1,3 +1,10 @@
+## [1.1.60](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.59...1.1.60) (2025-09-17)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.141.0 ([#449](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/449)) ([7bcc5f5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7bcc5f50f7768a48d48c0fbdb0bb602bfc408fc2))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.145 ([#448](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/448)) ([e6d1fbe](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/e6d1fbe911793eab5fd059bb3aeed4d7918178ff))
+
 ## [1.1.59](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.58...1.1.59) (2025-09-17)
 
 ### Dependency updates
