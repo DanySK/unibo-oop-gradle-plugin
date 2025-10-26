@@ -1,3 +1,14 @@
+## [1.1.70](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.69...1.1.70) (2025-10-26)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.151.0 ([#494](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/494)) ([b2f54ac](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b2f54acb0df1d1502dd5fd7e81fd15bde044e4d0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.150 ([#491](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/491)) ([dce4cca](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/dce4ccab3bff6ef34f3bf5241c207e33b1dd89a8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.151 ([#492](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/492)) ([a67f3b3](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a67f3b353848f0b42cc19d4a19f66e268392bcf3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.152 ([#493](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/493)) ([a366b0a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a366b0a6e43c163948bb9134d0c81074e945ea68))
+* **deps:** update plugin multijvmtesting to v4.3.0 ([#489](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/489)) ([ccc8187](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ccc8187c2ba4d6ef483be12a0e8163acdbc32f83))
+* **deps:** update plugin multijvmtesting to v4.3.1 ([#490](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/490)) ([3deb8ff](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3deb8ff5ad1046ee8b5f05659048cdb61ec1cb0c))
+
 ## [1.1.69](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.68...1.1.69) (2025-10-23)
 
 ### Dependency updates
