@@ -1,3 +1,15 @@
+## [1.1.72](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.71...1.1.72) (2025-11-26)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.156.0 ([#518](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/518)) ([8d201b5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8d201b5de2c8c9d8a3afc7e424777361c8b7299b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.157 ([#517](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/517)) ([4815736](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/48157366dc42be3c376b7a376a0233f18ce1cb9b))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6 ([#516](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/516)) ([881712e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/881712e77146efe4d4a0b2a6686ad6a8ec03135d))
+* **deps:** update danysk/action-checkout action to v0.2.26 ([#515](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/515)) ([005c64c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/005c64c5ad7d060c82558a2e9a85e6847dcd5dda))
+
 ## [1.1.71](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.70...1.1.71) (2025-11-20)
 
 ### Dependency updates
