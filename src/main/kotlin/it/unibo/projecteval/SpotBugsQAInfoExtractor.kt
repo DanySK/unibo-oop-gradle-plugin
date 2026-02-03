@@ -23,7 +23,7 @@ class SpotBugsQAInfoExtractor(root: Element) :
                     val sourceLineDescriptor = bugDescriptor.childrenNamed("SourceLine").first()
                     val category = bugDescriptor["category"].takeUnless { it == "STYLE" } ?: "UNSAFE"
                     val startLine = sourceLineDescriptor["start", "1"].toInt()
-                    val endLine = sourceLineDescriptor["end", Integer.MAX_VALUE.toString()].toInt()
+                    val endLine = sourceLineDescriptor["end", startLine.toString()].toInt()
                     val candidateFile = sourceLineDescriptor.get("relSourcepath") {
                         sourceLineDescriptor["sourcepath"]
                     }
