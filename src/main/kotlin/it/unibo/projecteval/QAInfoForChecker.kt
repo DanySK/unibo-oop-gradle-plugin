@@ -13,5 +13,5 @@ data class QAInfoForChecker(
     override val details: String = "",
     private val blamed: Set<String>? = null,
 ) : QAInfo {
-    override val blamedTo: Set<String> = blamed ?: file.blameFor(lines)
+    override val blamedTo: Set<String> by lazy { blamed ?: file.blameFor(lines) }
 }
