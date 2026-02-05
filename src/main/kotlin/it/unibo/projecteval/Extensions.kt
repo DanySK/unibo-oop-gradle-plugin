@@ -1,7 +1,7 @@
 package it.unibo.projecteval
 
+import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
-import org.jetbrains.kotlin.konan.file.File
 import org.w3c.dom.NamedNodeMap
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
@@ -52,7 +52,7 @@ internal object Extensions {
         .readText()
 
     fun String.blameFor(lines: IntRange): Set<String> {
-        val directory = this.substringBeforeLast(File.separator)
+        val directory = Paths.get(this).parent.toString()
         val command = listOf("git", "-C", directory, "blame", "-L", "${lines.first},${lines.last}", "-p", this)
         val output = command.commandOutput()
         return output
