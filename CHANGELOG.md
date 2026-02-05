@@ -1,3 +1,13 @@
+## [1.1.82](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.81...1.1.82) (2026-02-05)
+
+### Dependency updates
+
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.9 ([#580](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/580)) ([b31acab](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b31acabcf36902afe4c0a49e73bab1f1357595d4))
+
+### Bug Fixes
+
+* update directory path handling in `blameFor` function to use `Paths.get` ([#579](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/579)) ([6c71c39](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6c71c39796958427f03c232097dec6b719a267d0))
+
 ## [1.1.81](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.80...1.1.81) (2026-02-05)
 
 ### Dependency updates
