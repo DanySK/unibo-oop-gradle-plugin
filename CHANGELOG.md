@@ -1,3 +1,13 @@
+## [2.0.0](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.82...2.0.0) (2026-02-05)
+
+### ⚠ BREAKING CHANGES
+
+* require Java 21 as minimum (#582)
+
+### Bug Fixes
+
+* require Java 21 as minimum ([#582](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/582)) ([3169b8e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3169b8e292e293bfff5a048c877b773e0e313295))
+
 ## [1.1.82](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.81...1.1.82) (2026-02-05)
 
 ### Dependency updates
