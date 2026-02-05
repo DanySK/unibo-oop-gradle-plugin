@@ -1,3 +1,10 @@
+## [1.1.81](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.80...1.1.81) (2026-02-05)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.3.10 ([#577](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/577)) ([f11f327](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f11f327b3ecbbfe77e8d70dc865b55ccf13400ee))
+* **deps:** update kotest to v6.1.3 ([#578](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/578)) ([d4502a9](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d4502a9cc0d00df7d18c28858d99238b3c147fa7))
+
 ## [1.1.80](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/1.1.79...1.1.80) (2026-02-03)
 
 ### Dependency updates
