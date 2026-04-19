@@ -1,3 +1,38 @@
+## [2.0.3](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.2...2.0.3) (2026-04-19)
+
+### Dependency updates
+
+* **deps:** update kotest to v6.1.10 ([#625](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/625)) ([da1576e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/da1576e9e90931d7f22960c659b52d0b6013495f))
+* **deps:** update kotest to v6.1.11 ([#627](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/627)) ([049674f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/049674fabf87e55fbaadf68f25d6b6a43776e7d5))
+* **deps:** update kotest to v6.1.8 ([#614](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/614)) ([d7ab547](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d7ab547520ac1cc3fdaa7602a8008a7fb7d04dd3))
+* **deps:** update kotest to v6.1.9 ([#615](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/615)) ([b60051f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b60051f98f9393cae480ad0eb80934039a317d6e))
+* **deps:** update node.js to 24.15 ([#633](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/633)) ([3da44c5](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3da44c5eb19c57c47624a753d54dff4e22df1ac0))
+* **deps:** update plugin com.gradle.develocity to v4.4.0 ([#617](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/617)) ([758f05a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/758f05a88d03c98980904cf10c76db0c1fdce947))
+* **deps:** update plugin gitsemver to v7.0.15 ([#612](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/612)) ([b4ac53a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b4ac53a3c0a16652ce0cd838db1ebc3ab3b2a283))
+* **deps:** update plugin gitsemver to v7.0.16 ([#619](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/619)) ([c36571e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c36571eb457b33f35e6d3b3a9d27cbabd8a74a8d))
+* **deps:** update plugin gradlepluginpublish to v2.1.1 ([#610](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/610)) ([d8f5c4b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d8f5c4b1c349eb42c679eba8d2a7597eba82f111))
+* **deps:** update plugin kotlin-qa to v1.3.2 ([#620](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/620)) ([1752f31](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/1752f31e4e34b061d18b596a060d421a677dff0b))
+* **deps:** update plugin kotlin-qa to v1.4.0 ([#623](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/623)) ([eacbdc2](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/eacbdc273f2bcb154052ac60477d4999be9ce5df))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.11 ([#606](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/606)) ([98b9dac](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/98b9dac342e0e6db587211d5b943eb7040c71196))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.12 ([#611](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/611)) ([69b701f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/69b701fd490a260403dc97a9ebad0cc6203dff04))
+* **deps:** update plugin publishoncentral to v9.1.14 ([#609](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/609)) ([bed231c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/bed231cd447a1a6fdc949ffac18a83750d997a3e))
+* **deps:** update plugin publishoncentral to v9.1.15 ([#634](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/634)) ([b123827](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b123827adb397dd3b2368a78f578cbbe11268495))
+
+### Documentation
+
+* **deps:** update dependency org.jetbrains.dokka to v2.2.0 ([#618](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/618)) ([fd9029c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/fd9029c1ace29833cda044787afd71ad422191c0))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.25 ([#607](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/607)) ([994f4a7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/994f4a7923968763534528f6ddd2c9a970b154f1))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.26 ([#608](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/608)) ([5dc58b7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/5dc58b719e72bcac4e6840c09919c2555d7b3223))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.27 ([#613](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/613)) ([84c0999](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/84c09993b5531e1e3c3f805da1f50dbec9329c95))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.28 ([#616](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/616)) ([d1bcecc](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d1bceccb5efb29bfa631488c2a1c6ce5d7a74ffc))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.29 ([#621](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/621)) ([2525cc4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/2525cc4affa1de4d32415fa6fec9084b87100fe9))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.30 ([#622](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/622)) ([18d791d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/18d791de461edc2b1712e9d05f70a1937923cb72))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.31 ([#626](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/626)) ([2348058](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/2348058bb30518a35811f8c1e1b1ec9b0d36ed2e))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.32 ([#632](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/632)) ([f69e984](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f69e984dd94fa32622d0da2440912bd0e6b6cf99))
+
 ## [2.0.2](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.1...2.0.2) (2026-03-16)
 
 ### Dependency updates
