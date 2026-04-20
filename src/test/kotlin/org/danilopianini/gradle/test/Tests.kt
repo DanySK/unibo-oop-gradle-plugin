@@ -21,7 +21,15 @@ class Tests :
 
         val organization = "unibo-oop-projects"
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
-        val javaHome = System.getProperty("java.home")
+        val javaHome = System.getenv("JAVA_HOME")
+            ?.takeUnless { it.isBlank() }
+            ?: File(System.getProperty("java.home")).canonicalFile.let { runtimeHome ->
+                if (runtimeHome.name.equals("jre", ignoreCase = true)) {
+                    runtimeHome.parentFile.canonicalPath
+                } else {
+                    runtimeHome.canonicalPath
+                }
+            }
         val java17Toolchain = Regex("""JavaLanguageVersion\.of\(\s*17\s*\)""")
         val java17Version = Regex("""JavaVersion\.VERSION_17\b""")
 
