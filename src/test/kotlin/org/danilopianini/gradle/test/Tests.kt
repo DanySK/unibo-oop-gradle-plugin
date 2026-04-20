@@ -66,7 +66,7 @@ class Tests :
                         Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
                         "",
                     ).replace(java17Toolchain, "JavaLanguageVersion.of($currentJavaFeature)")
-                    .replace(java17Version, "JavaVersion.VERSION_$currentJavaFeature")
+                    .replace(java17Version, "JavaVersion.toVersion($currentJavaFeature)")
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
