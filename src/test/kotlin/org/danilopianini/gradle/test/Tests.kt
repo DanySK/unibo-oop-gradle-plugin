@@ -30,6 +30,8 @@ class Tests :
                     runtimeHome.canonicalPath
                 }
             }
+        val javaHomeForProperties = javaHome.replace('\\', '/')
+        val lineSeparator = System.lineSeparator()
         val java17Toolchain = Regex("""JavaLanguageVersion\.of\(\s*17\s*\)""")
         val java17Version = Regex("""JavaVersion\.VERSION_17\b""")
 
@@ -71,7 +73,8 @@ class Tests :
                     "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
                 )
                 buildFile.writeText(newContent)
-                File(destination.toFile(), "gradle.properties").appendText("\norg.gradle.java.home=$javaHome\n")
+                File(destination.toFile(), "gradle.properties")
+                    .appendText("${lineSeparator}org.gradle.java.home=$javaHomeForProperties$lineSeparator")
                 val destinationFile = destination.toFile()
                 val result = with(GradleRunner.create()) {
                     withGradleVersion(
