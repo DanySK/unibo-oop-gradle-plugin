@@ -32,6 +32,7 @@ class Tests :
             }
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
+        val currentJavaFeature = Runtime.version().feature()
         val java17Toolchain = Regex("""JavaLanguageVersion\.of\(\s*17\s*\)""")
         val java17Version = Regex("""JavaVersion\.VERSION_17\b""")
 
@@ -64,8 +65,8 @@ class Tests :
                     .replace(
                         Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
                         "",
-                    ).replace(java17Toolchain, "JavaLanguageVersion.of(21)")
-                    .replace(java17Version, "JavaVersion.VERSION_21")
+                    ).replace(java17Toolchain, "JavaLanguageVersion.of($currentJavaFeature)")
+                    .replace(java17Version, "JavaVersion.VERSION_$currentJavaFeature")
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
