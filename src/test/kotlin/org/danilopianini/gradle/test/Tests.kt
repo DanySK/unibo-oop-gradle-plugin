@@ -77,7 +77,7 @@ class Tests :
                 )
                 buildFile.writeText(newContent)
                 val gradleProperties = File(destination.toFile(), "gradle.properties")
-                val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties$lineSeparator"
+                val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties"
                 if (gradleProperties.exists() && gradleProperties.length() > 0L) {
                     gradleProperties.appendText("$lineSeparator$gradleJavaHomeProperty")
                 } else {
