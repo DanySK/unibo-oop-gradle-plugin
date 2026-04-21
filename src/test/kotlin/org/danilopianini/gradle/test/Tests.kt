@@ -74,8 +74,13 @@ class Tests :
                     "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
                 )
                 buildFile.writeText(newContent)
-                File(destination.toFile(), "gradle.properties")
-                    .appendText("${lineSeparator}org.gradle.java.home=$javaHomeForProperties$lineSeparator")
+                val gradleProperties = File(destination.toFile(), "gradle.properties")
+                val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties$lineSeparator"
+                if (gradleProperties.exists() && gradleProperties.length() > 0L) {
+                    gradleProperties.appendText("$lineSeparator$gradleJavaHomeProperty")
+                } else {
+                    gradleProperties.writeText(gradleJavaHomeProperty)
+                }
                 val destinationFile = destination.toFile()
                 val result = with(GradleRunner.create()) {
                     withGradleVersion(
