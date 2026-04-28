@@ -79,7 +79,15 @@ class Tests :
                 val gradleProperties = File(destination.toFile(), "gradle.properties")
                 val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties"
                 if (gradleProperties.exists() && gradleProperties.length() > 0L) {
-                    gradleProperties.appendText("$lineSeparator$gradleJavaHomeProperty")
+                    val existingContent = gradleProperties.readText()
+                    val gradleJavaHomeRegex = Regex("""^org\.gradle\.java\.home=.*$""", MULTILINE)
+                    val updatedContent =
+                        if (gradleJavaHomeRegex.containsMatchIn(existingContent)) {
+                            existingContent.replace(gradleJavaHomeRegex, gradleJavaHomeProperty)
+                        } else {
+                            "$existingContent$lineSeparator$gradleJavaHomeProperty"
+                        }
+                    gradleProperties.writeText(updatedContent)
                 } else {
                     gradleProperties.writeText(gradleJavaHomeProperty)
                 }
