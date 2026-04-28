@@ -21,17 +21,24 @@ class Tests :
 
         val organization = "unibo-oop-projects"
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
-        fun normalizeJavaHome(path: String): String = File(path).canonicalFile.let { javaHomeDirectory ->
-            if (javaHomeDirectory.name.equals("jre", ignoreCase = true)) {
-                javaHomeDirectory.parentFile.canonicalPath
-            } else {
-                javaHomeDirectory.canonicalPath
-            }
-        }
+        fun normalizeJavaHome(path: String): String? =
+            runCatching {
+                File(path)
+                    .takeIf { it.isDirectory }
+                    ?.canonicalFile
+                    ?.let { javaHomeDirectory ->
+                        if (javaHomeDirectory.name.equals("jre", ignoreCase = true)) {
+                            javaHomeDirectory.parentFile.canonicalPath
+                        } else {
+                            javaHomeDirectory.canonicalPath
+                        }
+                    }
+            }.getOrNull()
         val javaHome = System.getenv("JAVA_HOME")
             ?.takeUnless { it.isBlank() }
             ?.let(::normalizeJavaHome)
             ?: normalizeJavaHome(System.getProperty("java.home"))
+            ?: System.getProperty("java.home")
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
         val currentJavaFeature = Runtime.version().feature()
