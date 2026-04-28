@@ -43,7 +43,7 @@ class Tests :
         val currentJavaFeature = Runtime.version().feature()
         val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
         val javaVersionEnumRegex = Regex("""JavaVersion\.VERSION_\w+\b""")
-        val jvmToolchainRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
+        val jvmToolchainVersionRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
 
         listOf(
             "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
@@ -76,7 +76,7 @@ class Tests :
                         "",
                     ).replace(javaLanguageVersionRegex, "JavaLanguageVersion.of($currentJavaFeature)")
                     .replace(javaVersionEnumRegex, "JavaVersion.toVersion($currentJavaFeature)")
-                    .replace(jvmToolchainRegex) { "${it.groupValues[1]}($currentJavaFeature)" }
+                    .replace(jvmToolchainVersionRegex) { "${it.groupValues[1]}($currentJavaFeature)" }
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
