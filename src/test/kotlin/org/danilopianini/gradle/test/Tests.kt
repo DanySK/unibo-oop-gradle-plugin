@@ -21,19 +21,18 @@ class Tests :
 
         val organization = "unibo-oop-projects"
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
-        fun normalizeJavaHome(path: String): String? =
-            runCatching {
-                File(path)
-                    .takeIf { it.isDirectory }
-                    ?.canonicalFile
-                    ?.let { javaHomeDirectory ->
-                        if (javaHomeDirectory.name.equals("jre", ignoreCase = true)) {
-                            javaHomeDirectory.parentFile.canonicalPath
-                        } else {
-                            javaHomeDirectory.canonicalPath
-                        }
+        fun normalizeJavaHome(path: String): String? = runCatching {
+            File(path)
+                .takeIf { it.isDirectory }
+                ?.canonicalFile
+                ?.let { javaHomeDirectory ->
+                    if (javaHomeDirectory.name.equals("jre", ignoreCase = true)) {
+                        javaHomeDirectory.parentFile.canonicalPath
+                    } else {
+                        javaHomeDirectory.canonicalPath
                     }
-            }.getOrNull()
+                }
+        }.getOrNull()
         val javaHome = System.getenv("JAVA_HOME")
             ?.takeUnless { it.isBlank() }
             ?.let(::normalizeJavaHome)
@@ -42,8 +41,9 @@ class Tests :
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
         val currentJavaFeature = Runtime.version().feature()
-        val java17Toolchain = Regex("""JavaLanguageVersion\.of\(\s*17\s*\)""")
-        val java17Version = Regex("""JavaVersion\.VERSION_17\b""")
+        val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
+        val javaVersionEnumRegex = Regex("""JavaVersion\.VERSION_\w+\b""")
+        val jvmToolchainRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
 
         listOf(
             "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
@@ -74,8 +74,9 @@ class Tests :
                     .replace(
                         Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
                         "",
-                    ).replace(java17Toolchain, "JavaLanguageVersion.of($currentJavaFeature)")
-                    .replace(java17Version, "JavaVersion.toVersion($currentJavaFeature)")
+                    ).replace(javaLanguageVersionRegex, "JavaLanguageVersion.of($currentJavaFeature)")
+                    .replace(javaVersionEnumRegex, "JavaVersion.toVersion($currentJavaFeature)")
+                    .replace(jvmToolchainRegex) { "${it.groupValues[1]}($currentJavaFeature)" }
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
