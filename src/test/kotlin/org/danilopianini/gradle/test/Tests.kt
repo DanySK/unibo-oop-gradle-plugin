@@ -21,6 +21,29 @@ class Tests :
 
         val organization = "unibo-oop-projects"
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
+        fun normalizeJavaHome(path: String): String? = runCatching {
+            File(path)
+                .takeIf { it.isDirectory }
+                ?.canonicalFile
+                ?.let { javaHomeDirectory ->
+                    if (javaHomeDirectory.name.equals("jre", ignoreCase = true)) {
+                        javaHomeDirectory.parentFile.canonicalPath
+                    } else {
+                        javaHomeDirectory.canonicalPath
+                    }
+                }
+        }.getOrNull()
+        val javaHome = System.getenv("JAVA_HOME")
+            ?.takeUnless { it.isBlank() }
+            ?.let(::normalizeJavaHome)
+            ?: normalizeJavaHome(System.getProperty("java.home"))
+            ?: System.getProperty("java.home")
+        val javaHomeForProperties = javaHome.replace('\\', '/')
+        val lineSeparator = System.lineSeparator()
+        val currentJavaFeature = Runtime.version().feature()
+        val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
+        val javaVersionEnumRegex = Regex("""JavaVersion\.VERSION_\w+\b""")
+        val jvmToolchainVersionRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
 
         listOf(
             "OOP23-LucaFerar-Soprnzetti-Vdamianob-Velli-wulf",
@@ -46,10 +69,14 @@ class Tests :
                 destination.shouldContainFile(buildFileName)
                 destination.shouldContainFile("settings.gradle.kts")
                 val buildFile = File(destination.toFile(), buildFileName)
-                val buildFileContent = buildFile.readText().replace(
-                    Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
-                    "",
-                )
+                val buildFileContent = buildFile
+                    .readText()
+                    .replace(
+                        Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
+                        "",
+                    ).replace(javaLanguageVersionRegex, "JavaLanguageVersion.of($currentJavaFeature)")
+                    .replace(javaVersionEnumRegex, "JavaVersion.toVersion($currentJavaFeature)")
+                    .replace(jvmToolchainVersionRegex) { "${it.groupValues[1]}($currentJavaFeature)" }
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
@@ -57,6 +84,21 @@ class Tests :
                     "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
                 )
                 buildFile.writeText(newContent)
+                val gradleProperties = File(destination.toFile(), "gradle.properties")
+                val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties"
+                if (gradleProperties.exists() && gradleProperties.length() > 0L) {
+                    val existingContent = gradleProperties.readText()
+                    val gradleJavaHomeRegex = Regex("""^org\.gradle\.java\.home=.*$""", MULTILINE)
+                    val updatedContent =
+                        if (gradleJavaHomeRegex.containsMatchIn(existingContent)) {
+                            existingContent.replace(gradleJavaHomeRegex, gradleJavaHomeProperty)
+                        } else {
+                            "$existingContent$lineSeparator$gradleJavaHomeProperty"
+                        }
+                    gradleProperties.writeText(updatedContent)
+                } else {
+                    gradleProperties.writeText(gradleJavaHomeProperty)
+                }
                 val destinationFile = destination.toFile()
                 val result = with(GradleRunner.create()) {
                     withGradleVersion(
@@ -67,6 +109,7 @@ class Tests :
                         },
                     )
                     withProjectDir(destinationFile)
+                    withEnvironment(System.getenv() + ("JAVA_HOME" to javaHome))
                     withArguments("blame", "--stacktrace")
                     withPluginClasspath()
                     build()

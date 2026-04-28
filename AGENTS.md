@@ -3,15 +3,16 @@
 ## Build And Format
 
 - Use the Gradle wrapper for repository tasks. Run `./gradlew`, not a system Gradle installation.
-- Format Kotlin and Gradle Kotlin DSL changes with `./gradlew ktlintFormat` before finishing work.
-- Validate changes with `./gradlew build` after formatting. Do not replace this with a narrower command unless the user explicitly asks for it.
-- If formatting changes files, review the diff and rerun `./gradlew build`.
+- Validate changes with `./gradlew ktlintFormat build`.
+- Do not split the canonical validation flow into separate commands unless the user explicitly asks for it.
+- Do not treat `./gradlew test` or any other narrower task as project validation unless the user explicitly asks for that reduced scope.
+- If formatting changes files, review the diff and rerun `./gradlew ktlintFormat build`.
 
 ## Change Policy
 
 - Keep changes small and aligned with the existing Gradle Kotlin DSL structure and naming.
 - Prefer repository-defined plugins and automation over ad hoc scripts or alternate tooling.
-- Treat updates as complete compatibility work: change the version, fix resulting breakages, and continue until `./gradlew build` passes.
+- Treat updates as complete compatibility work: change the version, fix resulting breakages, and continue until `./gradlew ktlintFormat build` passes.
 - Do not weaken compiler or lint settings to make a change pass unless the user explicitly asks for that tradeoff.
 
 ## Warnings And Suppressions
