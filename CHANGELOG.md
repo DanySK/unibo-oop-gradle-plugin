@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.6...2.0.7) (2026-05-03)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.177.0 ([#660](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/660)) ([7212012](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7212012f5f6b4e1e7cbcadb581d8e53230e7b3f5))
+* **deps:** update plugin multijvmtesting to v4.3.4 ([#659](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/659)) ([561ce29](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/561ce29a59925ebe9017096d7aeed0be96352b13))
+
 ## [2.0.6](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.5...2.0.6) (2026-05-02)
 
 ### Dependency updates
