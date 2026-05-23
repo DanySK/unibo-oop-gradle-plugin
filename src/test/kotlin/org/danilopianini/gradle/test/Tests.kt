@@ -33,28 +33,14 @@ class Tests :
                     }
                 }
         }.getOrNull()
-        val preferredJavaFeature = 21
-        val environment = System.getenv()
-        fun javaHomeFromEnvironment(javaFeature: Int): String? = environment.entries
-            .firstOrNull { (key, value) -> key.startsWith("JAVA_HOME_${javaFeature}_") && value.isNotBlank() }
-            ?.value
+        val javaHome = System.getenv("JAVA_HOME")
+            ?.takeUnless { it.isBlank() }
             ?.let(::normalizeJavaHome)
-        val currentJavaFeature =
-            if (javaHomeFromEnvironment(preferredJavaFeature) !=
-                null
-            ) {
-                preferredJavaFeature
-            } else {
-                Runtime.version().feature()
-            }
-        val javaHome = javaHomeFromEnvironment(currentJavaFeature)
-            ?: System.getenv("JAVA_HOME")
-                ?.takeUnless { it.isBlank() }
-                ?.let(::normalizeJavaHome)
             ?: normalizeJavaHome(System.getProperty("java.home"))
             ?: System.getProperty("java.home")
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
+        val currentJavaFeature = Runtime.version().feature()
         val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
         val javaVersionEnumRegex = Regex("""JavaVersion\.VERSION_\w+\b""")
         val jvmToolchainVersionRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
