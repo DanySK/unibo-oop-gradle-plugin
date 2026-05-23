@@ -1,3 +1,9 @@
+## [2.0.10](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.9...2.0.10) (2026-05-23)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.5.1 ([#655](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/655)) ([0400574](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/040057447bb40451482b739d343e8574cea5d2c1))
+
 ## [2.0.9](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.8...2.0.9) (2026-05-23)
 
 ### Dependency updates
