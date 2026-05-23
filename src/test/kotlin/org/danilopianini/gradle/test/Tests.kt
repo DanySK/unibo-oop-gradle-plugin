@@ -33,11 +33,20 @@ class Tests :
                     }
                 }
         }.getOrNull()
-        fun javaHomeFromEnvironment(javaFeature: Int): String? = System.getenv().entries
+        val preferredJavaFeature = 21
+        val environment = System.getenv()
+        fun javaHomeFromEnvironment(javaFeature: Int): String? = environment.entries
             .firstOrNull { (key, value) -> key.startsWith("JAVA_HOME_${javaFeature}_") && value.isNotBlank() }
             ?.value
             ?.let(::normalizeJavaHome)
-        val currentJavaFeature = if (javaHomeFromEnvironment(21) != null) 21 else Runtime.version().feature()
+        val currentJavaFeature =
+            if (javaHomeFromEnvironment(preferredJavaFeature) !=
+                null
+            ) {
+                preferredJavaFeature
+            } else {
+                Runtime.version().feature()
+            }
         val javaHome = javaHomeFromEnvironment(currentJavaFeature)
             ?: System.getenv("JAVA_HOME")
                 ?.takeUnless { it.isBlank() }
