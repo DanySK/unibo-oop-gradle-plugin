@@ -6,10 +6,12 @@ import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.OutputFiles
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.get
+import org.gradle.work.DisableCachingByDefault
 
 /**
  * This task removes all warning suppressions from the source code.
  */
+@DisableCachingByDefault(because = "It rewrites source files in place")
 open class RemoveSuppressions : DefaultTask() {
     /**
      * All java source files.

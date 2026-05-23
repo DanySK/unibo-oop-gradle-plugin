@@ -42,7 +42,7 @@ repositories {
 }
 
 multiJvm {
-    jvmVersionForCompilation = maxOf(oldestJavaSupportedByGradle, 21)
+    jvmVersionForCompilation = oldestJavaSupportedByGradle
     maximumSupportedJvmVersion = (oldestJavaSupportedByGradle..latestJavaSupportedByGradle).last { it.isLTS }
 }
 
