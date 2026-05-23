@@ -21,6 +21,10 @@ class Tests :
 
         val organization = "unibo-oop-projects"
         val pluginsBlock = Regex("plugins\\s*\\{(.+?)}", RegexOption.DOT_MATCHES_ALL)
+        val foojayResolverPlugin = Regex(
+            """^\s*id\s*\(\s*"org\.gradle\.toolchains\.foojay-resolver-convention"\s*\)\s+version\s+".*"\s*$""",
+            MULTILINE,
+        )
         fun normalizeJavaHome(path: String): String? = runCatching {
             File(path)
                 .takeIf { it.isDirectory }
@@ -33,14 +37,36 @@ class Tests :
                     }
                 }
         }.getOrNull()
-        val javaHome = System.getenv("JAVA_HOME")
-            ?.takeUnless { it.isBlank() }
-            ?.let(::normalizeJavaHome)
-            ?: normalizeJavaHome(System.getProperty("java.home"))
-            ?: System.getProperty("java.home")
+        fun javaExecutable(javaHome: String): String =
+            File(
+                File(javaHome, "bin"),
+                if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) "java.exe" else "java",
+            ).absolutePath
+        val pluginJavaFeature = 21
+        val javaHomeCandidates = sequenceOf(
+            "JAVA_HOME_${pluginJavaFeature}_X64",
+            "JAVA_HOME",
+        ).mapNotNull { System.getenv(it)?.takeUnless(String::isBlank)?.let(::normalizeJavaHome) } +
+            sequenceOf(
+                normalizeJavaHome(System.getProperty("java.home")),
+                System.getProperty("java.home"),
+            ).mapNotNull { it }
+        val javaHome = javaHomeCandidates.firstOrNull {
+            Runtime.Version.parse(
+                ProcessBuilder(javaExecutable(it), "-version")
+                    .redirectErrorStream(true)
+                    .start()
+                    .inputStream
+                    .bufferedReader()
+                    .readText()
+                    .lineSequence()
+                    .first()
+                    .substringAfter('"')
+                    .substringBefore('"'),
+            ).feature() >= pluginJavaFeature
+        } ?: error("A JDK $pluginJavaFeature+ installation is required to execute TestKit builds")
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
-        val currentJavaFeature = Runtime.version().feature()
         val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
         val javaVersionEnumRegex = Regex("""JavaVersion\.VERSION_\w+\b""")
         val jvmToolchainVersionRegex = Regex("""((?:kotlin\.)?jvmToolchain)\(\s*\d+\s*\)""")
@@ -66,17 +92,19 @@ class Tests :
                     ),
                 )
                 val buildFileName = "build.gradle.kts"
+                val settingsFileName = "settings.gradle.kts"
                 destination.shouldContainFile(buildFileName)
-                destination.shouldContainFile("settings.gradle.kts")
+                destination.shouldContainFile(settingsFileName)
                 val buildFile = File(destination.toFile(), buildFileName)
                 val buildFileContent = buildFile
                     .readText()
                     .replace(
                         Regex("""id\s*\(\s*"org\.danilopianini\.unibo-oop-gradle-plugin"\s*\).*$""", MULTILINE),
                         "",
-                    ).replace(javaLanguageVersionRegex, "JavaLanguageVersion.of($currentJavaFeature)")
-                    .replace(javaVersionEnumRegex, "JavaVersion.toVersion($currentJavaFeature)")
-                    .replace(jvmToolchainVersionRegex) { "${it.groupValues[1]}($currentJavaFeature)" }
+                    )
+                    .replace(javaLanguageVersionRegex, "JavaLanguageVersion.of($pluginJavaFeature)")
+                    .replace(javaVersionEnumRegex, "JavaVersion.toVersion($pluginJavaFeature)")
+                    .replace(jvmToolchainVersionRegex) { "${it.groupValues[1]}($pluginJavaFeature)" }
                 val pluginsMatch = pluginsBlock.find(buildFileContent)
                 checkNotNull(pluginsMatch)
                 val newContent = buildFileContent.replaceRange(
@@ -84,6 +112,8 @@ class Tests :
                     "    id(\"org.danilopianini.unibo-oop-gradle-plugin\")\n}",
                 )
                 buildFile.writeText(newContent)
+                val settingsFile = File(destination.toFile(), settingsFileName)
+                settingsFile.writeText(settingsFile.readText().replace(foojayResolverPlugin, ""))
                 val gradleProperties = File(destination.toFile(), "gradle.properties")
                 val gradleJavaHomeProperty = "org.gradle.java.home=$javaHomeForProperties"
                 if (gradleProperties.exists() && gradleProperties.length() > 0L) {
