@@ -37,11 +37,11 @@ class Tests :
                     }
                 }
         }.getOrNull()
-        fun javaExecutable(javaHome: String): String =
-            File(
-                File(javaHome, "bin"),
-                if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) "java.exe" else "java",
-            ).absolutePath
+        fun javaExecutable(javaHome: String): String {
+            val javaBinaryName =
+                if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) "java.exe" else "java"
+            return File(File(javaHome, "bin"), javaBinaryName).absolutePath
+        }
         val pluginJavaFeature = 21
         val javaHomeCandidates = sequenceOf(
             "JAVA_HOME_${pluginJavaFeature}_X64",
