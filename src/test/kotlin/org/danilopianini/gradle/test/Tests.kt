@@ -42,18 +42,9 @@ class Tests :
                 if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) "java.exe" else "java"
             return File(File(javaHome, "bin"), javaBinaryName).absolutePath
         }
-        val pluginJavaFeature = 21
-        val javaHomeCandidates = sequenceOf(
-            "JAVA_HOME_${pluginJavaFeature}_X64",
-            "JAVA_HOME",
-        ).mapNotNull { System.getenv(it)?.takeUnless(String::isBlank)?.let(::normalizeJavaHome) } +
-            sequenceOf(
-                normalizeJavaHome(System.getProperty("java.home")),
-                System.getProperty("java.home"),
-            ).mapNotNull { it }
-        val javaHome = javaHomeCandidates.firstOrNull {
+        fun javaFeature(javaHome: String): Int? = runCatching {
             Runtime.Version.parse(
-                ProcessBuilder(javaExecutable(it), "-version")
+                ProcessBuilder(javaExecutable(javaHome), "-version")
                     .redirectErrorStream(true)
                     .start()
                     .inputStream
@@ -63,8 +54,22 @@ class Tests :
                     .first()
                     .substringAfter('"')
                     .substringBefore('"'),
-            ).feature() >= pluginJavaFeature
-        } ?: error("A JDK $pluginJavaFeature+ installation is required to execute TestKit builds")
+            ).feature()
+        }.getOrNull()
+        val pluginJavaFeature = 21
+        val javaHomeCandidates = (
+            sequenceOf(
+                "JAVA_HOME_${pluginJavaFeature}_X64",
+                "JAVA_HOME",
+            ).mapNotNull { System.getenv(it)?.takeUnless(String::isBlank)?.let(::normalizeJavaHome) } +
+                sequenceOf(
+                    normalizeJavaHome(System.getProperty("java.home")),
+                    System.getProperty("java.home"),
+                ).mapNotNull { it }
+            )
+        val javaHome =
+            javaHomeCandidates.firstOrNull { javaFeature(it)?.let { feature -> feature >= pluginJavaFeature } == true }
+                ?: error("A working JDK $pluginJavaFeature+ installation is required to execute TestKit builds")
         val javaHomeForProperties = javaHome.replace('\\', '/')
         val lineSeparator = System.lineSeparator()
         val javaLanguageVersionRegex = Regex("""JavaLanguageVersion\.of\(\s*\d+\s*\)""")
