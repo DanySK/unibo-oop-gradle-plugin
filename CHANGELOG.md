@@ -1,3 +1,18 @@
+## [2.0.11](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.10...2.0.11) (2026-05-30)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.180.0 ([#676](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/676)) ([85b4220](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/85b42206e698025bb9a2fb1a95da443a1ca6dac1))
+* **deps:** update node.js to 24.16 ([#672](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/672)) ([6ff711e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6ff711ebaa43025f21530dec534f5354b1b406e0))
+* **deps:** update plugin com.gradle.develocity to v4.4.2 ([#675](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/675)) ([f929d93](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f929d9321f040ffaf9f1c9a4f9ec0edfcf33bd22))
+* **deps:** update plugin kotlin-qa to v1.7.0 ([#677](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/677)) ([c9d68cf](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c9d68cf4e25ff8e0e6463371d79ccf91aa1bd53f))
+* **deps:** update plugin multijvmtesting to v4.4.0 ([#673](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/673)) ([0277191](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0277191d0c677d42601f6bed920e203bf6e86e51))
+* **deps:** update plugin multijvmtesting to v4.5.0 ([#674](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/674)) ([8eff828](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/8eff828fe0fab329ea7e67fe9bbab312217611ba))
+
+### Build and continuous integration
+
+* enable Windows in CI ([#581](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/581)) ([741a41b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/741a41b4d11ccf6a15f94f7e4b3adfa81709d438))
+
 ## [2.0.10](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.9...2.0.10) (2026-05-23)
 
 ### Dependency updates
