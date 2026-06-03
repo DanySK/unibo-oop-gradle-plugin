@@ -1,3 +1,14 @@
+## [2.0.13](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.12...2.0.13) (2026-06-03)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.4.0 ([#681](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/681)) ([35edff4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/35edff45dae4656cc87a31bf7a2426abe43584ef))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6.0.3 ([#679](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/679)) ([86fd6aa](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/86fd6aae27e0e317fefb9489c58dae657e6cf44f))
+* **deps:** update danysk/action-checkout action to v0.2.29 ([#680](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/680)) ([06ad33b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/06ad33b945463d739bafbd5b355afee6288424a1))
+
 ## [2.0.12](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.11...2.0.12) (2026-05-31)
 
 ### Dependency updates
