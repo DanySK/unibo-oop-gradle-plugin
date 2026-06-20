@@ -1,3 +1,10 @@
+## [2.0.19](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.18...2.0.19) (2026-06-20)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.186.0 ([#703](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/703)) ([c609b5b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c609b5bd24fc8a1ce80e27096da5609368b78215))
+* **deps:** update plugin publishoncentral to v9.2.6 ([#702](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/702)) ([1fa0ad7](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/1fa0ad76de33419bdb94b33c93d0d48298284e1f))
+
 ## [2.0.18](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.17...2.0.18) (2026-06-19)
 
 ### Dependency updates
