@@ -1,3 +1,11 @@
+## [2.0.28](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.27...2.0.28) (2026-08-08)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.7.0 ([#740](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/740)) ([b23171f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b23171f476a497300d56e702222d78d1261bf687))
+* **deps:** update node.js to 24.19 ([#739](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/739)) ([b6f354e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b6f354eecd75e44156da0d90a2f23e1f9a74fbe0))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.22 ([#742](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/742)) ([91fa16e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/91fa16eb93ff774101d11b4b6690b3e7784b88d3))
+
 ## [2.0.27](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.26...2.0.27) (2026-08-05)
 
 ### Dependency updates
