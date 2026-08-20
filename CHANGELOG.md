@@ -1,3 +1,20 @@
+## [2.0.29](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.28...2.0.29) (2026-08-20)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.7.1 ([#752](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/752)) ([9e71336](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9e71336adfa0ba7b79340e6dd15ded2021a67d07))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.187 ([#744](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/744)) ([c03692f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c03692f4b3222377f7c58acfa50f6ca3e5c36cbd))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.188 ([#745](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/745)) ([742e1da](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/742e1da11f32f6b6a3ddbe67371bf50d81e5b241))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.189 ([#747](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/747)) ([a3811e3](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a3811e324b6d09ff4393bd33651d74f20aa03b16))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.190 ([#749](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/749)) ([6790942](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/6790942d12b1e2e1ec7cb63b89acb0b6fe667957))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.191 ([#750](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/750)) ([2be1b29](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/2be1b29dd14c02337050e5fdff70c52c6a0e610c))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.192 ([#751](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/751)) ([674967b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/674967bff527ce93a06024a6563e50d303555ef0))
+* **deps:** update dependency io.kotest:kotest-runner-junit5-jvm to v6.2.4 ([#748](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/748)) ([3f6e218](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3f6e2187711ce4b09c2453e80d371f192a557e53))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.23 ([#753](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/753)) ([ba75890](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ba758907f8f3e08c1a0370e65d22cfba03ba3b55))
+* **deps:** update plugin publishoncentral to v9.2.10 ([#754](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/754)) ([a23083f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/a23083f25b0f2b366b9f07246065dc4436f2049f))
+* **deps:** update plugin publishoncentral to v9.2.9 ([#743](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/743)) ([49cea1e](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/49cea1ee4f048bebea882a212f3ba54e0a9a212f))
+* **deps:** update plugin tasktree to v4.0.2 ([#746](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/746)) ([c6c0e3b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/c6c0e3b32733c5172ebe1c0dea8fd16ef484cf77))
+
 ## [2.0.28](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.27...2.0.28) (2026-08-08)
 
 ### Dependency updates
