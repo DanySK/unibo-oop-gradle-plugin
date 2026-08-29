@@ -1,3 +1,16 @@
+## [2.0.32](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.31...2.0.32) (2026-08-29)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.195.0 ([#761](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/761)) ([7f4203c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7f4203c0efef77224187ee95f9378e09d599a48d))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.193 ([#757](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/757)) ([052a33f](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/052a33f029293dc8cf9699ff560912eb5160b625))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.194 ([26a2bfc](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/26a2bfcca64f3b8a55e4dc9f6b6e1aa03754a919))
+* **deps:** update plugin kotlin-qa to v1.9.0 ([#760](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/760)) ([9c8130d](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9c8130dd8e3f8c295736f8718df66a99d16d392b))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.44 ([#759](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/759)) ([ec8409c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ec8409c6a990a259e30e864d6e55b6e45e1e6f53))
+
 ## [2.0.31](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.30...2.0.31) (2026-08-20)
 
 ### Dependency updates
