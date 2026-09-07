@@ -1,3 +1,11 @@
+## [2.0.33](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.32...2.0.33) (2026-09-07)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.4.20 ([#763](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/763)) ([40b213a](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/40b213add121425eb79b961ea5c3d698e803ca4e))
+* **deps:** update node.js to 24.20 ([#762](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/762)) ([ea9ef73](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ea9ef7318f87ee9511c0c670f65d787d9ce502d0))
+* **deps:** update plugin publishoncentral to v9.2.11 ([#764](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/764)) ([bc74255](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/bc742558f77201e7bd61ab76f52165364bece0d2))
+
 ## [2.0.32](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.31...2.0.32) (2026-08-29)
 
 ### Dependency updates
