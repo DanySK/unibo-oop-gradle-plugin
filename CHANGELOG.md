@@ -1,3 +1,11 @@
+## [2.0.36](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.35...2.0.36) (2026-09-27)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.197.0 ([#787](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/787)) ([86039ee](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/86039ee0101fa2fa28b52e644a7e06c8b16a51f6))
+* **deps:** update plugin kotlin-qa to v1.10.0 ([#786](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/786)) ([ae9afef](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ae9afef45a534e181e01b21fa464626c89ab2281))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.25 ([#785](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/785)) ([cdf02b4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/cdf02b4c2820b7d43e25190626b5c18caec79bf5))
+
 ## [2.0.35](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.34...2.0.35) (2026-09-26)
 
 ### Dependency updates
