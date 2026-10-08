@@ -1,3 +1,14 @@
+## [2.0.37](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.36...2.0.37) (2026-10-08)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.8.1 ([7a558b4](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/7a558b44db2569ad9ba5960e230db0e1bb9cd833))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.197 ([9a2a674](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/9a2a67435b103ad01a9724cd6d31574ba0012a32))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.48 ([#788](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/788)) ([8316598](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/83165980cc8c08d091a9bc6e136730cac14703b6))
+
 ## [2.0.36](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.35...2.0.36) (2026-09-27)
 
 ### Dependency updates
