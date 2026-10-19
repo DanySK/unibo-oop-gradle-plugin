@@ -1,3 +1,15 @@
+## [2.0.41](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.40...2.0.41) (2026-10-19)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.danilopianini:gradle-java-qa to v1.200.0 ([#809](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/809)) ([0d5384b](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0d5384b62b1eede30202a22f285b99c9445a3b2e))
+* **deps:** update node.js to 24.22 ([#807](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/807)) ([38a3f80](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/38a3f801e400b4077f0b7f083a3da04a09a5bc0e))
+* **deps:** update plugin kotlin-qa to v1.10.2 ([d4e9876](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/d4e9876854c1ccb9f4b50623ae44393fd251a3a9))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.49 ([50878bd](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/50878bd5e46618dd4bed9f3e5a28f529d878b1dc))
+
 ## [2.0.40](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.39...2.0.40) (2026-10-15)
 
 ### Dependency updates
