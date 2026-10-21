@@ -1,3 +1,12 @@
+## [2.0.42](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.41...2.0.42) (2026-10-21)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.8.2 ([#810](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/810)) ([b7f2d76](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/b7f2d76fa2e3303e22f297e0b9ce1867a99fd2dc))
+* **deps:** update plugin gitsemver to v7.1.0 ([#812](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/812)) ([ff45643](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/ff4564322f9db10f44fa63be469d65248c9cea48))
+* **deps:** update plugin gitsemver to v7.2.0 ([#817](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/817)) ([23818e9](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/23818e978f3b0b341d1628a127c70ea66ed7a2fd))
+* **deps:** update plugin publishoncentral to v9.2.15 ([f47295c](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/f47295c4e5509a4efba80b7171f3240ad713bec4))
+
 ## [2.0.41](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.40...2.0.41) (2026-10-19)
 
 ### Dependency updates
