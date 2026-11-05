@@ -1,3 +1,13 @@
+## [2.0.44](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.43...2.0.44) (2026-11-05)
+
+### Documentation
+
+* **deps:** update dependency org.jetbrains.dokka to v2.3.0 ([#824](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/824)) ([3dda644](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/3dda6440bcdbbdbab6a868efd058a68d2f72fa1c))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.51 ([0b527ed](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/0b527ede3cc12364d97d23789520cc6c192f7591))
+
 ## [2.0.43](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.42...2.0.43) (2026-11-02)
 
 ### Dependency updates
