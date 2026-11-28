@@ -1,3 +1,11 @@
+## [2.0.48](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.47...2.0.48) (2026-11-28)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.9.3 ([#838](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/838)) ([37f31c8](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/37f31c870243037e8aa36982316af99e6fc72ad4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.160 ([#837](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/837)) ([49f20ae](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/49f20aea8c265dc7591edb1c9d54abc57d9e1688))
+* **deps:** update plugin publishoncentral to v9.3.3 ([#836](https://github.com/DanySK/unibo-oop-gradle-plugin/issues/836)) ([91788db](https://github.com/DanySK/unibo-oop-gradle-plugin/commit/91788db987f575ebfb5319755960a2dee462e0f2))
+
 ## [2.0.47](https://github.com/DanySK/unibo-oop-gradle-plugin/compare/2.0.46...2.0.47) (2026-11-20)
 
 ### Dependency updates
